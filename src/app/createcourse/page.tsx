@@ -2,7 +2,6 @@
 // import { generateCourseContent } from "@/config/Aimodel"; // Adjust path if needed
 import { Button } from "@/components/ui/button";
 import React, { useContext, useState } from "react";
-// import {generateCourseContent} from '../../config/Aimodel'
 import { BiCategoryAlt } from "react-icons/bi";
 import { FaRegLightbulb } from "react-icons/fa";
 import { TbTableOptions } from "react-icons/tb";
@@ -10,7 +9,7 @@ import Category from "./_component/Category";
 import Topic_description from "./_component/Topic_description";
 import Options from "./_component/Options";
 import { Userinput } from "../_context/Userinput";
-import { generateCourseContent } from "@/config/Aimodel";
+// import { generateCourseContent } from "@/config/Aimodel";
 
 const Createcourse = () => {
     const {userCourseInput, setUserCourseInput} = useContext(Userinput)
