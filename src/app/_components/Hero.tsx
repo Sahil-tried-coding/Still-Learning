@@ -1,5 +1,6 @@
 import React from 'react'
 import svg from "../../../public/MessyDoodle.svg"
+import Link from 'next/link'
 const Hero = () => {
   return (
     <section className="bg-white lg:grid  lg:place-content-center">
@@ -18,19 +19,13 @@ const Hero = () => {
       </p>
 
       <div className="mt-4 flex gap-4 sm:mt-6">
-        <a
+        <Link
           className="inline-block rounded border border-blue-600 bg-blue-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-          href="#"
+          href={"/createcourse"}
         >
-          Get Started
-        </a>
+          Get Started 
+        </Link>
 
-        {/* <a
-          className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-          href="#"
-        >
-          Learn More
-        </a> */}
       </div>
     </div>
 

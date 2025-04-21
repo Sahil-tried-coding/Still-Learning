@@ -3,7 +3,7 @@
 export async function POST(req: Request) {
     const api_key = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
     const { prompt } = await req.json();
-    
+     
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -13,7 +13,9 @@ export async function POST(req: Request) {
         "X-Title": "Still Learning", // optional
       },
       body: JSON.stringify({
-        model: "google/gemini-pro",
+        // model: "gemini-2.5-pro-preview-03-25",
+        model: "google/gemini-2.0-flash-001",
+        // model: "deepseek/deepseek-chat-v3-0324:free",
         messages: [
           {
             role: "user",
