@@ -9,7 +9,6 @@ import Topic_description from "./_component/Topic_description";
 import Options from "./_component/Options";
 import { Userinput } from "../_context/Userinput";
 import LoadingDailog from "./_component/LoadingDailog";
-// import { generateCourseContent } from "@/config/Aimodel";
 
 const Createcourse = () => {
   const { userCourseInput, setUserCourseInput } = useContext(Userinput);
