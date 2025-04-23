@@ -9,12 +9,26 @@ import Topic_description from "./_component/Topic_description";
 import Options from "./_component/Options";
 import { Userinput } from "../_context/Userinput";
 import LoadingDailog from "./_component/LoadingDailog";
+import { db } from "@/config/db";
+import { CourseList } from "@/config/schema";
+import { v4 as uuidv4 } from 'uuid';
+import Courselayout from "./layout";
+import { useUser } from "@clerk/nextjs";
+import { Router } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+
+
 
 const Createcourse = () => {
   const { userCourseInput, setUserCourseInput } = useContext(Userinput);
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const [loading, setLoading] = useState(false);
+
+  const { user }  = useUser()
+
+  const router = useRouter()
 
   const StepperOptions = [
     {
@@ -83,7 +97,27 @@ const Createcourse = () => {
   //   setLoading(false);
   // }
   // }
+  const SaveCourseLayoutIntoDb = async (cousreLayout) =>{
 
+    const id = uuidv4();
+    setLoading(true)
+    const result = await db.insert(CourseList).values({
+
+      courseId:id,
+      name:userCourseInput.topic,
+      category:userCourseInput.category,
+      level:userCourseInput.level,
+      courseOutput:cousreLayout,
+      userName:user?.fullName,
+      createdBy:user?.primaryEmailAddress?.emailAddress || "lavde",
+      userImage:user?.imageUrl
+
+    })
+    console.log(result)
+    setLoading(false)
+    router.replace("/createcourse/"+ id)
+    
+  }
   const generateCourseLayout = async () => {
 //     const prompt = `Return JSON in the following format only:
 
@@ -179,14 +213,23 @@ NoOf Chapters:${userCourseInput.chapters}, in JSON format`;
       });
 
       const data = await response.json();
+      const data_2 = await data.choices[0].message.content
+      const output = await data_2.slice(7, -3).trim()
+      SaveCourseLayoutIntoDb(output)
       // const myData = JSON.stringify(data);
-      console.log("✅ Course Data:", data);
+      // console.log("✅ Course Data:", data);
+      console.log(output);
       
     } catch (err) {
       console.error("❌ Something went wrong:", err);
     } finally {
-      setLoading(false)
+      setLoading(false) 
     }
+
+
+    
+
+
   };
 
   return (

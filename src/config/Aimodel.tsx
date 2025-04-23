@@ -337,7 +337,7 @@ export const generateCourseContent = async (prompt: string) => {
     const result = data.choices?.[0]?.message?.content;
     return result;
   } catch (error) {
-    console.error("Error generating course content:", error);
+    console.error("Error  generating course content:", error);
     throw error;
   }
 };
