@@ -6,24 +6,26 @@ import { Button } from "@/components/ui/button";
 
 const BasicCourseLayout = ({ course }) => {
   return (
-    <div className="p-10 border shadow-2xl mt-5 lg:w-[90%]">
+    <div className="px-10  py-10 border shadow-md mt-5 lg:w-[100%]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
-        <div>
+        <div className="flex flex-col justify-center">
           <h1 className="font-semibold text-2xl">
-            {course?.courseOutput?.CourseName}
+            {/* Java for experts  🚀 */}
+            {course?.courseOutput?.CourseName} 🚀
           </h1>
           <h1 className=" text-sm text-gray-400 mt-3">
             {course.courseOutput?.Description}
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem dolorum incidunt sunt deleniti, eum natus ipsum dicta iusto reiciendis architecto, labore odio atque fugiat quas eaque recusandae ipsam placeat. */}
           </h1>
           <div className="flex mt-4 gap-3 text-blue-400 items-center font-semibold">
             <TbCategory />
             <h1>{course?.category}</h1>
           </div>
-          <Button className= "bg-blue-500 mt-4 text-white font-semibold w-full">Start</Button>
+          <Button className= "cursor-pointer bg-blue-500 mt-4 text-white font-semibold w-full">Start</Button>
         </div>
         <div>
           <Image
-            className=" h-[250px] rounded-2xl object-contain"
+            className="  h-[250px]  rounded-2xl object-contain"
             alt="img"
             src={placeholder}
             width={600}

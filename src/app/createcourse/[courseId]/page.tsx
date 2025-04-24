@@ -6,21 +6,24 @@ import { and, eq } from 'drizzle-orm'
 
 import React, { useEffect, useState } from 'react'
 import BasicCourseLayout from './_components/BasicCourseLayout'
+import { useParams } from 'next/navigation'
+import CourseDetails from './_components/CourseDetails'
 
 
-// type ParamType = {
-//   courseId:string
-// }
 
-const CourseLayout = ({params}:{params: {courseId:string}}) => {
+const CourseLayout = () => {
 
 
   const [course, setCourse] = useState({})
   const {user} = useUser()
 
+
+  const { courseId } = useParams() as { courseId: string }
+  console.log("this is coiurse is",courseId)
+
   useEffect(()=>{
     getCourse()
-  },[params.courseId,user])
+  },[courseId,user])
   
   const getCourse = async () =>{
 
@@ -30,12 +33,15 @@ const CourseLayout = ({params}:{params: {courseId:string}}) => {
   .from(CourseList)
   .where(
     and(
-      eq(CourseList.courseId, params.courseId),
+      eq(CourseList.courseId,courseId),
       eq(CourseList.createdBy, user?.primaryEmailAddress?.emailAddress || "hmm")
     )
   );
 
-  setCourse(result[0])
+  if(result.length>0){
+    
+    setCourse(result[0])
+  }
   console.log(result)
 
   }
@@ -43,8 +49,8 @@ const CourseLayout = ({params}:{params: {courseId:string}}) => {
 
   return (
     <div>
-      <div className='md:px-22 lg:px-44 mt-10'>
-      <h1>Course layout</h1>
+      <div className='md:px-22 lg:px-48 mt-4 lg:flex lg:flex-col lg:items-center'>
+      {/* <h1 className='font-semibold'>Course layout</h1> */}
 
 
 
@@ -52,6 +58,9 @@ const CourseLayout = ({params}:{params: {courseId:string}}) => {
 
       {/* basic course info */}
 <BasicCourseLayout course={course} />
+
+{/* course details */}
+<CourseDetails course={course} />
       </div>
     </div>
   )
