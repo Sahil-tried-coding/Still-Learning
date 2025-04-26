@@ -4,7 +4,7 @@ import { TbAntennaBars5 } from "react-icons/tb";
 
 const CourseDetails = ({ course }) => {
   return (
-    <div className="shadow-2xl w-full border p-6 mt-4.5 lg:mx-48">
+    <div className="shadow-lg w-full border p-6 mt-4.5 lg:mx-48">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
       <div className="flex items-center gap-3">
           <div className="text-3xl">

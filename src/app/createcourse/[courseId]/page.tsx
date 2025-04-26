@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react'
 import BasicCourseLayout from './_components/BasicCourseLayout'
 import { useParams } from 'next/navigation'
 import CourseDetails from './_components/CourseDetails'
+import ChapterDetails from './_components/ChapterDetails'
 
 
 
@@ -61,6 +62,9 @@ const CourseLayout = () => {
 
 {/* course details */}
 <CourseDetails course={course} />
+
+
+<ChapterDetails course={course}/>
       </div>
     </div>
   )
