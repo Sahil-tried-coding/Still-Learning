@@ -17,7 +17,7 @@ const CourseDetails = ({ course }) => {
               {/*  name */}
               Skill level
             </div>
-            <div className="text-lg font-semibold">
+            <div className="text-base font-semibold">
               {course?.level}
               {/*  dec */}
             </div>
@@ -34,7 +34,7 @@ const CourseDetails = ({ course }) => {
               {/*  name */}
               Duration
             </div>
-            <div className="text-lg font-semibold">
+            <div className="text-base  font-semibold">
             {course?.courseOutput?.Duration}
               {/*  dec */}
             </div>
@@ -51,7 +51,7 @@ const CourseDetails = ({ course }) => {
               {/*  name */}
               No. of Chapters
             </div>
-            <div className="text-lg font-semibold">
+            <div className="text-base font-semibold">
             {course?.courseOutput?.NoOfChapters}
               {/*  dec */}
             </div>
@@ -68,7 +68,7 @@ const CourseDetails = ({ course }) => {
               {/*  name */}
               Video Content ?
             </div>
-            <div className="text-lg font-semibold">
+            <div className="text-base font-semibold">
             {course?.includeVideo}
               {/*  dec */}
             </div>

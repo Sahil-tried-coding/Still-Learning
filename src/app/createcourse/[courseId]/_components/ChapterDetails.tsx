@@ -4,13 +4,13 @@ import React from 'react'
 const ChapterDetails = ({course}) => {
   return (
     <div>
-        <h1 className="font-semibold text-center text-4xl text-blue-500 mt-3.5">Chapters </h1>
+        <h1 className="font-semibold text-left text-xl text-blue-500 mt-4.5">Chapters / Modules </h1>
 
         <div>
             {
                 course?.courseOutput?.Chapters?.map((item,index)=>(
                     // main box
-                    <div className='shadow-md p-3 border-2 justify-between  mt-5 flex items-center' key={index}>
+                    <div className='shadow-md p-3  justify-between  mt-7 flex items-center' key={index}>
 
                         <div className='flex gap-3 items-center'>
                         {/* <div className='bg-blue-500 rounded-[100%] w-[45px] text-white font-semibold text-center h-[42px] py-2'>
