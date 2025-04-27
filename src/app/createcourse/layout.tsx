@@ -5,6 +5,8 @@ import { Userinput } from '../_context/Userinput'
 
 const Courselayout = ({children}:ReactNode) => {
   const [userCourseInput, setUserCourseInput] = useState()
+//  const [fireBaseImage,setFirebaseImage] = useState("")
+
   return (
     <div>
       <Userinput.Provider  value={{userCourseInput, setUserCourseInput}}>

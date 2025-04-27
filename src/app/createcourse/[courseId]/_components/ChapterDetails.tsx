@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import EditBasicCourseInfo from './EditBasicCourseInfo'
 
 const ChapterDetails = ({course}) => {
   return (
@@ -18,7 +19,8 @@ const ChapterDetails = ({course}) => {
                         </div> */}
 
                         <div className='flex flex-col gap-2'>
-                            <div className='font-semibold'>{item.ChapterName}</div>
+            
+            <div className='font-semibold'>{item.ChapterName} </div>
                             <div className='text-gray-400 text-xs flex-none w-[85%]'>{item.About}</div>
                             <div className='flex items-center gap-1.5'>
                                 <Image alt='clock' width={25} height={25} src={"/clock.png"}/>

@@ -27,7 +27,7 @@ const Topic_description = () => {
     <div className='mx-20 lg:px-44 lg:mt-12 flex flex-col gap-8'>
       <div>
         <label  className=' capitalize'> {`Type something you want a course on  maybe "TypeScript", maybe "Yoga"… or maybe how to finally finish what you start. `}
-          <Input required={true} value={userCourseInput?.topic} name='topic' onChange={e=>handleTopicInput(e.target.name,e.target.value)}  className='mt-3 capitalize font-semibold text-lg' placeholder='Enter a Topic '/>
+          <Input required={true} value={userCourseInput?.topic || ""} name='topic' onChange={e=>handleTopicInput(e.target.name,e.target.value)}  className='mt-3 capitalize font-semibold text-lg' placeholder='Enter a Topic '/>
         </label>
       </div>
       <div>
