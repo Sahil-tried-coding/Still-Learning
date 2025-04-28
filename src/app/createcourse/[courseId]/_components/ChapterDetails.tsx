@@ -14,9 +14,12 @@ const ChapterDetails = ({course}) => {
                     <div className='shadow-md p-3  justify-between  mt-7 flex items-center' key={index}>
 
                         <div className='flex gap-3 items-center'>
-                        {/* <div className='bg-blue-500 rounded-[100%] w-[45px] text-white font-semibold text-center h-[42px] py-2'>
+                            <div className='w-[8%]'>
+                        <div className='bg-blue-500 rounded-[100%] w-[35px] text-white font-semibold text-center h-[35px] py-2'>
                             {index+1}
-                        </div> */}
+                        </div>
+
+                            </div>
 
                         <div className='flex flex-col gap-2'>
             
