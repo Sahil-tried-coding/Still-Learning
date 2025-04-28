@@ -20,7 +20,6 @@ const CourseLayout = () => {
 
 
   const { courseId } = useParams() as { courseId: string }
-  console.log("this is coiurse is",courseId)
 
   useEffect(()=>{
     getCourse()

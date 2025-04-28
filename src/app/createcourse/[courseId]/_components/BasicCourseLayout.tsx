@@ -1,61 +1,75 @@
 "use client";
 
 import Image from "next/image";
-import React, { useContext, useState } from "react";
-import placeholder from "../../../../../public/placeholder.png"; // Default placeholder
+import React, { useEffect, useState } from "react";
 import { TbCategory } from "react-icons/tb";
 import { Button } from "@/components/ui/button";
 import EditBasicCourseInfo from "./EditBasicCourseInfo";
 import { Input } from "@/components/ui/input";
 import { storage } from "@/config/firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-// import upload from "@/lib/upload";
-import { Userinput } from "@/app/_context/Userinput";
-import Upload from "@/lib/Upload";
+import { db } from "@/config/db";
+import { CourseList } from "@/config/schema";
+import { eq } from "drizzle-orm";
+import { useRouter } from "next/navigation";
+import placeholder from "../../../../../public/placeholder.png"
 
 const BasicCourseLayout = ({ course }) => {
+  const [firebaseImage, setFirebaseImage] = useState<string>(course?.courseImage );
+  const [loading, setLoading] = useState(false);
 
-  const [selectedFile, setSelectedFile] = useState<string>()
+  const router = useRouter();
 
- const [firebaseImage,setFirebaseImage] = useState("")
+  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
 
-  const handleImageUpload = async (event) =>{
+    const fileName = Date.now() + ".jpg";
+    const storageRef = ref(storage, "images/" + fileName);
 
-    const file = event.target.files[0];
-    setSelectedFile(URL.createObjectURL(file))
+    try {
+      setLoading(true); // Start Loading
 
-    const fileName = Date.now() + '.jpg'
+      await uploadBytes(storageRef, file);
+      console.log("file uploaded successfully");
 
-    const storageRef =ref(storage,'images/'+ fileName)
+      const downloadURL = await getDownloadURL(storageRef);
 
-    await uploadBytes(storageRef,file).then((snapshot)=>console.log("file uploaded successfully"))
-        getDownloadURL(storageRef).then((downloadURL) => {
-          setFirebaseImage(downloadURL)
-          // console.log(downloadURL)
-        })
+      await saveImageToDb(downloadURL);
 
-    // const fileUrl = await Upload(event.target.files[0]);
+      await setFirebaseImage(downloadURL); // Update the state
+      setLoading(false); // Done loading
+      router.refresh(); // Refresh server data
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      setLoading(false); // Stop loading even on error
+    }
+  };
 
-    // console.log("this is file url",fileUrl)
-  }
+  const saveImageToDb = async (url: string) => {
+    const result = await db.update(CourseList)
+      .set({ courseImage: url })
+      .where(eq(CourseList.id, course.id));
 
-//  const {fireBaseImage,setFirebaseImage} = useContext(Userinput)
+    if (result) {
+      console.log("done image uploaded to drizzle");
+    }
+  };
 
 
-
+  useEffect(()=>{
+    setFirebaseImage(course.courseImage)
+  },[])
 
   return (
     <div className="flex flex-col">
-      {/* Heading */}
       <h1 className="font-bold text-center text-4xl text-blue-600 tracking-wide mb-6">
         Course Layout
       </h1>
 
-      {/* Course Card */}
-      <div className="px-6 py-8 border shadow-lg rounded-xl bg-white  lg:w-full">
+      <div className="px-6 py-8 border shadow-lg rounded-xl bg-white lg:w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-          {/* Left Content */}
           <div className="flex flex-col justify-center">
             <div className="flex items-center gap-2">
               <h1 className="font-semibold text-2xl">
@@ -78,19 +92,21 @@ const BasicCourseLayout = ({ course }) => {
             </Button>
           </div>
 
-          {/* Right Image */}
           <div className="flex justify-center items-center">
-<label htmlFor="upload-image">
-            <Image
-              className="rounded-2xl object-contain bg-gray-100 p-2"
-              alt="Course Image"
-              src={firebaseImage? firebaseImage : "/placeholder.png"}
-              // src={selectedFile? selectedFile : "/placeholder.png"}
-              // src={course?.courseOutput?.ImageUrl || "/placeholder.png"}
-              width={400}
-              height={300}
-            />
-            <Input onChange={handleImageUpload} id="upload-image" className="opacity-0" type="file"/>
+            <label htmlFor="upload-image">
+              <Image
+                className="rounded-2xl object-contain  p-2"
+                alt="Course Image"
+                src={loading ? placeholder : (firebaseImage || placeholder)}
+                width={400}
+                height={300}
+              />
+              <Input
+                onChange={handleImageUpload}
+                id="upload-image"
+                className="opacity-0"
+                type="file"
+              />
             </label>
           </div>
 
@@ -101,3 +117,4 @@ const BasicCourseLayout = ({ course }) => {
 };
 
 export default BasicCourseLayout;
+ 

@@ -109,7 +109,7 @@ const Createcourse = () => {
       level:userCourseInput.level,
       courseOutput:cousreLayout,
       userName:user?.fullName,
-      createdBy:user?.primaryEmailAddress?.emailAddress || "lavde",
+      createdBy:user?.primaryEmailAddress?.emailAddress || "no user got",
       userImage:user?.imageUrl
 
     })
@@ -192,11 +192,11 @@ const Createcourse = () => {
 // - Chapters: ${userCourseInput.chapters} Include course name, description, chapter names with summaries, and total duration.`;
 
     const prompt = `Generate A Course Tutorial on Following
-Detail With field as Course Name,
-Description, Along with Chapter Name,
+Detail With field as CourseName,
+Description, Along with ChapterName,
 about, Duration: Category:${userCourseInput.category},
 Topic:${userCourseInput.topic}, Level:${userCourseInput.level}, Duration: ${userCourseInput.duration},
-NoOf Chapters:${userCourseInput.chapters}, in JSON format`;
+NoOfChapters:${userCourseInput.chapters}, in JSON format`;
   //   const prompt = `Generate a course tutorial with the following details:
   // - Category: ${userCourseInput.category}
   // - Topic: ${userCourseInput.topic}

@@ -10,6 +10,6 @@ export const CourseList = pgTable("CourseList",{
     courseOutput:json("courseOutput").notNull(),
     createdBy:varchar("createdBy").notNull(),
     userName:varchar("userName"),
-    courseImage:varchar("courseImage").notNull().$default("https://stock.adobe.com/search?k=upload+image+icon"),
-    userImage:varchar("userImage"),
+    courseImage:varchar("courseImage"),
+    userImage:varchar("userImage")
 })
