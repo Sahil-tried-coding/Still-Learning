@@ -11,6 +11,7 @@ import CourseDetails from './_components/CourseDetails'
 import ChapterDetails from './_components/ChapterDetails'
 import { Button } from '@/components/ui/button'
 import LoadingDailog from '../_component/LoadingDailog'
+import getYoutubeVideo from '@/config/Service'
 
 type courseType = {
   id:number,
@@ -118,19 +119,21 @@ const CourseLayout = () => {
     
         const getAiRespones = async () =>{
           try {
-            const response = await fetch("/api/generate", {
-              method: "POST",
-              body: JSON.stringify({ prompt }),
-            });
+            // const response = await fetch("/api/generate", {
+            //   method: "POST",
+            //   body: JSON.stringify({ prompt }),
+            // });
       
-            const data = await response.json();
-            const data_2 = await data.choices[0].message.content
-            // console.log("✅ this is data 2", data_2);
+            // const data = await response.json();
+            // const data_2 = await data.choices[0].message.content
+            // // console.log("✅ this is data 2", data_2);
             
-            const output = await data_2.slice(7, -3).trim()
-            // SaveCourseLayoutIntoDb(output)
-            // const myData = JSON.stringify(data);
-            console.log(output);
+            // const output = await data_2.slice(7, -3).trim()
+            // console.log(output);
+      getYoutubeVideo(course?.name + ':' + chapter.ChapterName).then((resp)=>{
+      console.log(resp)
+     })
+
   
             setLoading(false)
   

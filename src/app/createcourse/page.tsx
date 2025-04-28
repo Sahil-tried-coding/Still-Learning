@@ -12,9 +12,7 @@ import LoadingDailog from "./_component/LoadingDailog";
 import { db } from "@/config/db";
 import { CourseList } from "@/config/schema";
 import { v4 as uuidv4 } from 'uuid';
-import Courselayout from "./layout";
 import { useUser } from "@clerk/nextjs";
-import { Router } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 
@@ -216,9 +214,8 @@ NoOfChapters:${userCourseInput.chapters}, in JSON format`;
       const data_2 = await data.choices[0].message.content
       const output = await data_2.slice(7, -3).trim()
       SaveCourseLayoutIntoDb(output)
-      // const myData = JSON.stringify(data);
-      // console.log("✅ Course Data:", data);
       console.log(output);
+
       
     } catch (err) {
       console.error("❌ Something went wrong:", err);
