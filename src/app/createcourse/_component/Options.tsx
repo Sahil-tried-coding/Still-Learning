@@ -36,7 +36,7 @@ const Options = () => {
             </SelectTrigger>
             <SelectContent className="bg-blue-400 text-white mt-1.5">
               <SelectItem value="Beginner">Beginner</SelectItem>
-              <SelectItem value="Intermidate">Intermidate</SelectItem>
+              <SelectItem value="Intermediate"> Intermediate</SelectItem>
               <SelectItem value="Advanced">Advanced</SelectItem>
             </SelectContent>
           </Select>
@@ -69,7 +69,7 @@ const Options = () => {
         <div>
                 <label >No of Chapters</label>
           
-            <Input value={userCourseInput?.chapters} onChange={e=>handleOptionsInput('chapters',e.target.value)} className="w-[240px] mt-1.5" type="number"></Input>
+            <Input value={userCourseInput?.chapters || "" } onChange={e=>handleOptionsInput('chapters',e.target.value)} className="w-[240px] mt-1.5" type="number"></Input>
         </div>
       </div>
     </div>

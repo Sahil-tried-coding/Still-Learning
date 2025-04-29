@@ -9,9 +9,9 @@ const Addcourse = () => {
 
     const {user} = useUser()
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between px-10 md:px-22 lg:px-12'>
         <div>
-            <h1 className='text-2xl'>Hello ,<span className='font-semibold'>{user?.fullName}</span></h1>
+            <h1 className='text-2xl'>Hello ,<span className='font-semibold text-blue-500'>{user?.fullName}</span></h1>
             <p>Create New Course With Ai 🚀</p>
         </div>
 

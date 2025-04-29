@@ -59,13 +59,11 @@ const BasicCourseLayout = ({ course }) => {
 
   useEffect(()=>{
     setFirebaseImage(course.courseImage)
-  },[])
+  },[course])
 
   return (
     <div className="flex flex-col">
-      <h1 className="font-bold text-center text-4xl text-blue-600 tracking-wide mb-6">
-        Course Layout
-      </h1>
+      
 
       <div className="px-6 py-8 border shadow-lg rounded-xl bg-white lg:w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
