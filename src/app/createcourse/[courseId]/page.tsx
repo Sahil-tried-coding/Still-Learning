@@ -1,17 +1,19 @@
 "use client"
 import { db } from '@/config/db'
-import { CourseList } from '@/config/schema'
+import { ChapterList, CourseList } from '@/config/schema'
 import { useUser } from '@clerk/nextjs'
 import { and, eq } from 'drizzle-orm'
+import { v4 as uuidv4 } from 'uuid';
 
 import React, { useEffect, useState } from 'react'
 import BasicCourseLayout from './_components/BasicCourseLayout'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import CourseDetails from './_components/CourseDetails'
 import ChapterDetails from './_components/ChapterDetails'
 import { Button } from '@/components/ui/button'
 import LoadingDailog from '../_component/LoadingDailog'
 import getYoutubeVideo from '@/config/Service'
+import { randomUUID } from 'crypto'
 
 type courseType = {
   id:number,
@@ -74,9 +76,14 @@ const CourseLayout = () => {
     userImage: '',
     userName: '',
     category: ''
+  
   });
   
+  const router = useRouter()
+
   const {user} = useUser()
+
+  const id = uuidv4()
 
 
   const { courseId } = useParams() as { courseId: string }
@@ -113,26 +120,46 @@ const CourseLayout = () => {
     
     Chapters.forEach((chapter,index)=>{
       
-      if(index == 1){
-    
+
+        
+        let content = ''
+        let videoId = ''
         const prompt = 'Explain the concept in Detail on topic'   +course?.name+ ', Chapter' +chapter.ChapterName+ ', in JSON format with list or array with field as title,explaination on give chapter in detail , code Example(Code filed in <predcode> format) if applicable'
     
         const getAiRespones = async () =>{
           try {
-            // const response = await fetch("/api/generate", {
-            //   method: "POST",
-            //   body: JSON.stringify({ prompt }),
-            // });
+             getYoutubeVideo(course?.name +':'+ chapter.ChapterName).then((res) => {
+              videoId=res?.items[0]?.id?.videoId
+              console.log(videoId)
+            })
+
+    
+
+
+
+
+
+            const response = await fetch("/api/generate", {
+              method: "POST",
+              body: JSON.stringify({ prompt }),
+            });
       
-            // const data = await response.json();
-            // const data_2 = await data.choices[0].message.content
-            // // console.log("✅ this is data 2", data_2);
+            const data = await response.json();
+            const data_2 = await data.choices[0].message.content
+            // console.log("✅ this is data 2", data_2);
             
-            // const output = await data_2.slice(7, -3).trim()
-            // console.log(output);
-      getYoutubeVideo(course?.name + ':' + chapter.ChapterName).then((resp)=>{
-      console.log(resp)
-     })
+            const output = await data_2.slice(7, -3).trim()
+            console.log(output)
+            content=output;
+
+            
+            await db.insert(ChapterList).values({
+              id:id,
+              chapterId:index,
+              videoId:videoId,
+              courseId:course?.courseId,
+              content:content
+            })
 
   
             setLoading(false)
@@ -145,7 +172,7 @@ const CourseLayout = () => {
         getAiRespones()
 
        
-      }
+        router.replace("/createcourse/"+course?.courseId+'/finish')
 
 
 

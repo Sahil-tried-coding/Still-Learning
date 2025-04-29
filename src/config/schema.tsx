@@ -1,4 +1,5 @@
-import { json, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import { integer, json ,numeric, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+// import { numeric } from "drizzle-orm/sqlite-core";
 
 export const CourseList = pgTable("CourseList",{
     id:serial('id').primaryKey(),
@@ -12,4 +13,13 @@ export const CourseList = pgTable("CourseList",{
     userName:varchar("userName"),
     courseImage:varchar("courseImage"),
     userImage:varchar("userImage")
+})
+
+
+export const ChapterList = pgTable("ChapterList",{
+    id:serial('id').primaryKey(),
+    videoId:varchar("videoId").notNull(),
+    courseId:varchar("courseId").notNull(),
+    content:json('content').notNull(),
+    chapterId:integer('chapterId').notNull()
 })
