@@ -1,25 +1,31 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-  
-const DropdownOptions = ({children,handleDelete}) => {
-  return (
-    <DropdownMenu >
-  <DropdownMenuTrigger className='cursor-pointer'>{children}</DropdownMenuTrigger>
-  <DropdownMenuContent>
-    {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
-    {/* <DropdownMenuSeparator /> */}
-    <DropdownMenuItem className='cursor-pointer' onClick={()=>handleDelete}>Delete</DropdownMenuItem>
-    {/* <DropdownMenuItem>Billing</DropdownMenuItem>
-    <DropdownMenuItem>Team</DropdownMenuItem>
-    <DropdownMenuItem>Subscription</DropdownMenuItem> */}
-  </DropdownMenuContent>
-</DropdownMenu>
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
+const DropdownOptions = ({ children, handleOnDelete }) => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger asChild>
+        <div onClick={() => setOpen((prev) => !prev)}>{children}</div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem
+          onClick={() => {
+            handleOnDelete()
+            setOpen(false) // Close menu after action
+          }}
+        >
+          Delete
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }
 
