@@ -42,6 +42,7 @@ const CourseCard = ({item}) => {
      if(resp){
       setLoading(false)
        setOpendailog(false)
+       router.refresh()
      }
      
 
@@ -52,7 +53,7 @@ const CourseCard = ({item}) => {
     }
   return (
     <div
-    // onClick={()=>router.replace(`createcourse/${item.courseId}`)}
+    onClick={()=>router.replace(`createcourse/${item.courseId}`)}
       key={item.courseId}
       className="shadow-md rounded-xl overflow-hidden p-4 bg-white hovr:shadow-lg transition-all duration-200 hove
     r:scale-[1.02] cursor-pointer"

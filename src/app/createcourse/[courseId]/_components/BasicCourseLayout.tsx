@@ -61,6 +61,9 @@ const BasicCourseLayout = ({ course }) => {
     setFirebaseImage(course.courseImage)
   },[course])
 
+  // let parsedCourse = {}
+  // parsedCourse = course.courseOutput ? JSON.parse(course?.courseOutput) : {}
+
   return (
     <div className="flex flex-col">
       
@@ -71,7 +74,7 @@ const BasicCourseLayout = ({ course }) => {
           <div className="flex flex-col justify-center">
             <div className="flex items-center gap-2">
               <h1 className="font-semibold text-2xl">
-                {course?.courseOutput?.CourseName || "Untitled Course"}
+                {course?.courseOutput?.CourseName  || "Untitled Course"}
               </h1>
               <EditBasicCourseInfo course={course} />
             </div>

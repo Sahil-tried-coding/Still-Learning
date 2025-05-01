@@ -15,9 +15,9 @@ const Addcourse = () => {
             <p>Create New Course With Ai 🚀</p>
         </div>
 
-        <Link href={"createcourse"}>
+        <Link href={"/createcourse"}>
         
-         <Button  className='bg-blue-500 text-white font-semibold'>+ Course with Ai</Button></Link>
+         <Button   className='bg-blue-500 text-white font-semibold cursor-pointer'>+ Course with Ai</Button></Link>
     </div>
   )
 }

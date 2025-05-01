@@ -98,9 +98,10 @@ const CourseLayout = () => {
         )
       );
 
-    if (result.length > 0) {
+    if (result.length >0 ) {
       setCourse(result[0]);
     }
+    
     console.log("this is result[0]", result[0]);
   };
 
@@ -165,7 +166,7 @@ const CourseLayout = () => {
       </h1>
 
         {/* basic course info */}
-        <BasicCourseLayout course={course} />
+        <BasicCourseLayout  course={course} />
 
         {/* course details */}
         <CourseDetails course={course} />
