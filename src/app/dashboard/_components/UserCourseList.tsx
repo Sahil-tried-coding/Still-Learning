@@ -7,6 +7,7 @@ import { eq } from "drizzle-orm";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
+import Shimmer from "./Shimmer";
 
 type Chapter = {
   ChapterName: string;
@@ -70,11 +71,13 @@ const UserCourseList = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
         {allCourse.map((item) => (
 <CourseCard key={item.courseId} refreshData={()=>getAllCourses} item={item}/>
+
         ))}
       </div>
 
       {allCourse.length === 0 && (
-        <p className="text-center mt-10 text-gray-400">No courses found yet.</p>
+        <Shimmer/>
+        // <p className="text-center mt-1 b0 text-gray-400">No courses found yet.</p>
       )}
     </div>
   );

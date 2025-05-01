@@ -57,10 +57,10 @@ const CourseCard = ({item,refreshData}) => {
     onClick={()=>router.replace(`createcourse/${item.courseId}`)}
       key={item.courseId}
       className="shadow-md rounded-xl overflow-hidden p-4 bg-white hovr:shadow-lg transition-all duration-200 hove
-    r:scale-[1.02] cursor-pointer"
+    r:scale-[1.02] cursor-pointer "
     >
       <Image
-        className="mx-auto rounded-md object-cover w-full h-[150px]"
+        className="mx-auto rounded-md object-cover w-full h-[150px] "
         src={item.courseImage || "/video-content-op.png"}
         alt="Course"
         width={300}
@@ -70,7 +70,7 @@ const CourseCard = ({item,refreshData}) => {
         <h2 className="font-bold text-lg text-gray-800 flex justify-between items-center ">
           {item.courseOutput.CourseName}
           <DropdownOptions handleOnDelete={handleOnDelete}>
-          <FaEllipsisVertical className='cursor-pointer' />
+          <FaEllipsisVertical className='cursor-pointer bg-white text-black text-3xl ' />
 
           </DropdownOptions>
 

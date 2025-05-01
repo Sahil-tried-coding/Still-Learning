@@ -8,12 +8,18 @@ import { Button } from '@/components/ui/button';
 
 const SidebarHeader = () => {
   return (
-    <div className='flex justify-between w-full px-6 items-center'>
-        <Link href="/"><Image alt='logo' width={60} height={60} src={logo} /></Link>
+    <div className='flex justify-between w-full px-10 items-center'>
+        {/* <Link href="/"><Image alt='logo' width={60} height={60} src={logo} /></Link> */}
+        <div className="flex items-center px-4  gap-0.5 mt-3.5">
+                  <Image src={logo} alt="logo" width={50} height={50} />
+                  <h1 className="font-semibold text-xl whitespace-nowrap">
+                    Still Learning
+                  </h1>
+                </div>
         {/* <UserButton/> */}
         <div className='flex items-center gap-4'>
           <Link href={"/dashboard"}>
-        <Button className='cursor-pointer bg-blue-500 text-white font-semibold'>Dashboard</Button></Link>
+        <Button variant={"outline"} className='cursor-pointer text-blue-500  font-semibold'>Dashboard</Button></Link>
         <UserButton />
         </div>
         

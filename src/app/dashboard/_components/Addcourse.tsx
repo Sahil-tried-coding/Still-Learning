@@ -1,25 +1,34 @@
-"use client"
-import { Button } from '@/components/ui/button'
-import { useUser } from '@clerk/nextjs'
-import Link from 'next/link'
-import React from 'react'
+"use client";
 
-const Addcourse = () => {
+import { Button } from "@/components/ui/button";
+import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
+import React from "react";
 
+const AddCourse = () => {
+  const { user } = useUser();
 
-    const {user} = useUser()
   return (
-    <div className='flex justify-between px-10 md:px-22 lg:px-12'>
-        <div>
-            <h1 className='text-2xl'>Hello ,<span className='font-semibold text-blue-500'>{user?.fullName}</span></h1>
-            <p>Create New Course With Ai 🚀</p>
-        </div>
+    <section className="flex flex-col md:flex-row items-start md:items-center justify-between px-6 md:px-12 lg:px-20 py-6 bg-white rounded-xl shadow-sm">
+      <div>
+        <h1 className="text-2xl font-medium text-gray-800">
+          Hello,{" "}
+          <span className="font-semibold text-blue-600">
+            {user?.fullName || "Instructor"}
+          </span>
+        </h1>
+        <p className="text-sm text-gray-500 mt-1">
+          Ready to create your next course with AI? 🚀
+        </p>
+      </div>
 
-        <Link href={"/createcourse"}>
-        
-         <Button   className='bg-blue-500 text-white font-semibold cursor-pointer'>+ Course with Ai</Button></Link>
-    </div>
-  )
-}
+      <Link href="/createcourse" passHref>
+        <Button className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-md transition-all duration-200">
+          + Create Course with AI
+        </Button>
+      </Link>
+    </section>
+  );
+};
 
-export default Addcourse
+export default AddCourse;
