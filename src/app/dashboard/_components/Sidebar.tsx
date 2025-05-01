@@ -59,7 +59,7 @@ const Sidebar = () => {
         </div>
 
         {/* Nav Links */}
-        <div className="flex flex-col">
+        <div className="flex flex-col px-5 gap-1.5">
           {menuItems.map((item) => (
             <Link key={item.id} href={item.path}>
               <div

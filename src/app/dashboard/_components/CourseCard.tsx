@@ -21,7 +21,7 @@ import { Button } from '@/components/ui/button'
 import { Loader2Icon } from 'lucide-react'
 
 
-const CourseCard = ({item}) => {
+const CourseCard = ({item,refreshData}) => {
     const router = useRouter()
 
     const [opendailog, setOpendailog] = useState(false)
@@ -42,6 +42,7 @@ const CourseCard = ({item}) => {
      if(resp){
       setLoading(false)
        setOpendailog(false)
+       refreshData()
        router.refresh()
      }
      

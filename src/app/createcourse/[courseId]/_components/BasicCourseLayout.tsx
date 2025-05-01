@@ -65,7 +65,7 @@ const BasicCourseLayout = ({ course }) => {
   // parsedCourse = course.courseOutput ? JSON.parse(course?.courseOutput) : {}
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-[]4">
       
 
       <div className="px-6 py-8 border shadow-lg rounded-xl bg-white lg:w-full">
@@ -96,7 +96,7 @@ const BasicCourseLayout = ({ course }) => {
           <div className="flex justify-center items-center">
             <label htmlFor="upload-image">
               <Image
-                className="rounded-2xl object-contain  p-2"
+                className="rounded-2xl object-contain h-[250px]  p-2"
                 alt="Course Image"
                 src={loading ? placeholder : (firebaseImage || placeholder)}
                 width={400}
