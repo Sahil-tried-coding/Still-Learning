@@ -13,6 +13,7 @@ import { CourseList } from "@/config/schema";
 import { eq } from "drizzle-orm";
 import { useRouter } from "next/navigation";
 import placeholder from "../../../../../public/placeholder.png"
+import Link from "next/link";
 
 const BasicCourseLayout = ({ course }) => {
   const [firebaseImage, setFirebaseImage] = useState<string>(course?.courseImage );
@@ -87,10 +88,12 @@ const BasicCourseLayout = ({ course }) => {
               <TbCategory className="text-xl" />
               <span>{course?.category || "Uncategorized"}</span>
             </div>
+<Link href={'/course/'+course.courseId+"/start"}>
 
             <Button className="cursor-pointer bg-blue-500 hover:bg-blue-600 mt-6 w-full text-white font-semibold py-2 rounded-md transition">
               Start Course
             </Button>
+            </Link>
           </div>
 
           <div className="flex justify-center items-center">
