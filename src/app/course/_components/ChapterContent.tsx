@@ -28,12 +28,16 @@ const ChapterContent = ({ chapter, content }) => {
 
       {/* Render sections or subtopics */}
       <div className="space-y-4 mt-6">
-        {(content?.content?.sections || content?.content?.[0]?.subtopics || content?.Sections[0].subsections || []).map(
+        {(content?.content?.sections || content?.content?.[0]?.subtopics || content?.content?.Sections || content?.content?.concepts || []).map(
           (item, index) => (
             <div key={index} className="border bg-blue-100 p-4 rounded-lg bgwhite shadow-sm">
               <h2 className="font-semibold text-lg text-blue-600 mb-2">{item.title}</h2>
               <p className="text-gray-800">{item.explanation}</p>
-
+              {
+                item?.subsections && (
+                  <div>🔥{item.subsections[1].title}</div>
+                )
+              }
               {item.code_example && (
                 <div className="mt-4">
                   {item.code_example.description && (
@@ -58,6 +62,38 @@ const ChapterContent = ({ chapter, content }) => {
                   {/* {item.codeExample.example && ( */}
                     <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
                       <code>{item.codeExample.example || item.codeExample.exampleBase ||item.codeExample.exampleChild }</code>
+                    </pre>
+                  
+                </div>
+              )}
+              {item?.example && (
+                <div className="mt-4">
+                 {/* {
+                // item?.subsections && (
+                //   <div>🔥{item.subsections[1].title}</div>
+                // )
+              } */}
+                  {/* {item.codeExample.example && ( */}
+                    <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
+                      <code>{ item?.example?.code}</code>
+                      {/* <code>{item.codeExample.example || item.codeExample.exampleBase ||item.codeExample.exampleChild || item?.subsections?.example?.code}</code> */}
+                    </pre>
+                  
+                </div>
+              )}
+              {item?.code && item.examples && (
+                <div className="mt-4">
+                 
+                {
+                  item?.examples.map((item,index)=>{
+                    <h1>{item.code}</h1>
+                  })
+                }
+              
+                  {/* {item.codeExample.example && ( */}
+                    <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
+                      <code>{ item?.code}</code>
+                      {/* <code>{item.codeExample.example || item.codeExample.exampleBase ||item.codeExample.exampleChild || item?.subsections?.example?.code}</code> */}
                     </pre>
                   
                 </div>
