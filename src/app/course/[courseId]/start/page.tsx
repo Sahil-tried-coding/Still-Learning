@@ -6,10 +6,13 @@ import { and, eq } from 'drizzle-orm'
 import React, { useEffect, useState } from 'react'
 import ChapterCard from '../../_components/ChapterCard'
 import ChapterContent from '../../_components/ChapterContent'
+import { useParams } from 'next/navigation'
 
-const CourseStart = ({params}) => {
+const CourseStart = () => {
+  const { courseId } = useParams() as { courseId: string };
 
     const [selecteChapter, setSelecteChapter] = useState([])
+    const[chapterContent,setChapterContent] = useState([])
 
     const [course,setCourse] = useState([])
     useEffect(()=>{
@@ -20,19 +23,22 @@ const CourseStart = ({params}) => {
     const getChapterContent = async (chapterId) =>{
 
         const result =  await db.select().from(ChapterList).where(
-            eq(ChapterList.chapterId,chapterId)
+            and(eq(ChapterList.chapterId,chapterId),eq(ChapterList.courseId,courseId))
         )
+        setChapterContent(result[0])
         console.log("this is the content",result)
 
     }
 
     const getCourse = async()=>{
-        const result = await db.select().from(CourseList).where(eq(params.courseId,CourseList.courseId))
+        const result = await db.select().from(CourseList).where(eq(CourseList.courseId,courseId))
         console.log(result[0])
         setCourse(result[0])
     }
   return (
-    <div className='hidden md:block w-80 bg-white h-screen border-r-2'>
+    <div className='flex'>
+
+    <div className='hidden md:block min-w-80 max-w-80 bg-white h-screen border-r-2 '>
         
 
 <div className=' '>
@@ -51,10 +57,12 @@ const CourseStart = ({params}) => {
 
 
 
-        <div>
-            {/* <ChapterContent  chapter={selecteChapter}/>  */}
+    </div>
+        <div className='p-12'>
+            <ChapterContent content={chapterContent}  chapter={selecteChapter}/> 
         </div>
     </div>
+
   )
 }
 
