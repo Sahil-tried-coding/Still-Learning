@@ -16,7 +16,6 @@ const ChapterContent = ({ chapter, content }) => {
     if (typeof input !== "string") return input;
   
     try {
-      // First: Unescape the JSON string
       const unescaped = input.replace(/\\n/g, "\n").replace(/\\"/g, '"');
       
       return JSON.parse(unescaped);
