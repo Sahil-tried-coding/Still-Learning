@@ -66,6 +66,8 @@ const ChapterContent = ({ chapter, content }) => {
           opts={opts}
         />
       )}
+       
+            {/* <p className="">{item.explanation}</p> */}
 
       {/* <div className="space-y-4 mt-6">
         {(
@@ -319,8 +321,44 @@ const ChapterContent = ({ chapter, content }) => {
         ))}
       </div> */}
  
-      <div className="space-y-4 mt-6">
+      <div className="space-y-4 mt-6 ">
         {
+          (content?.content || content[0]?.content || []).map((item,index)=>(
+            <div className="border bg-blue-100 p-4 rounded-lg bgwhite shadow-sm" key={index}>
+             <h2 className="font-semibold text-lg text-blue-600 mb-2">
+              {item?.title}
+            </h2>
+              <h1 className="ml-4 text-gray-800 mb-2">{item.explanation}</h1>
+              <pre  className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
+                <h1 className="bg-white text-black p-2 mb-2">{item.codeExample.description} </h1>
+                <code>{item.codeExample.code}</code>
+              </pre>
+              <h1 className="font-semibold mt-1.5">Notes : - </h1>
+              <h1 className="ml-4 mt-1.5">  {item.notes}</h1>
+              {item.bestPractices&&<h1 className="font-semibold mt-1.5">Best Practises</h1>}
+              {
+               item.bestPractices && item.bestPractices.map((bp,index)=>(
+                <div key={index}>
+                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
+                    <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                    {bp}</h1>
+                </div>
+               ))
+              }
+              {item.advantages&&<h1 className="font-semibold mt-1.5">Advantages</h1>}
+              {
+               item.advantages && item.advantages.map((bp,index)=>(
+                <div key={index}>
+                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
+                  <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                    
+                    {bp}</h1>
+                </div>
+               ))
+              }
+            </div>
+          ))
+
           
         }
       </div>
