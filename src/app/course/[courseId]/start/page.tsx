@@ -32,7 +32,7 @@ const CourseStart = () => {
 
     const getCourse = async()=>{
         const result = await db.select().from(CourseList).where(eq(CourseList.courseId,courseId))
-        console.log( "this is fucling", result[0])
+        // console.log( "this is fucling", result[0])
         setCourse(result[0])
     }
   return (
