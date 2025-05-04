@@ -194,7 +194,7 @@ Detail With field as CourseName,
 Description, Along with ChapterName,
 about, Duration: Category:${userCourseInput.category},
 Topic:${userCourseInput.topic}, Level:${userCourseInput.level}, Duration: ${userCourseInput.duration},
-NoOfChapters:${userCourseInput.chapters}, in JSON format`;
+NoOfChapters:${userCourseInput.chapters}, in strictly JSON format`;
   //   const prompt = `Generate a course tutorial with the following details:
   // - Category: ${userCourseInput.category}
   // - Topic: ${userCourseInput.topic}

@@ -10,14 +10,47 @@ const opts = {
 };
 
 const ChapterContent = ({ chapter, content }) => {
-  const isArrayContent = Array.isArray(content?.content);
+
+
+  function safeJsonContent(input: string | object) {
+    if (typeof input !== "string") return input;
+  
+    try {
+      // First: Unescape the JSON string
+      const unescaped = input.replace(/\\n/g, "\n").replace(/\\"/g, '"');
+      
+      // Second: Parse the clean JSON string
+      return JSON.parse(unescaped);
+    } catch (err) {
+      console.warn("Failed to parse JSON content:", err);
+      return {};
+    }
+  }
+  
+
+  let parsedContent = safeJsonContent(content.content) ;
+
+  try {
+    parsedContent = typeof(content.content) == "string" ? JSON.parse(content.content) : content.content
+  } catch (error) {
+    console.log(error)
+  }
+
+
+
+
+
+  const isArrayContent = Array.isArray(parsedContent);
+  // const isArrayContent = Array.isArray(content?.content);
+  // console.log("Raw content string:", content.content);
+
 
   return (
     <div className="p-4 space-y-6">
       <h1 className="font-semibold text-2xl">
         {isArrayContent
           ? content?.content[0]?.title
-          : content?.content?.chapter || content?.content?.Chapter}
+          : content?.content?.chapter || content?.content?.Chapter || content[0]?.content?.title}
       </h1>
 
       <p className="text-gray-700">
@@ -34,9 +67,9 @@ const ChapterContent = ({ chapter, content }) => {
         />
       )}
 
-      {/* Render sections or subtopics */}
-      <div className="space-y-4 mt-6">
+      {/* <div className="space-y-4 mt-6">
         {(
+          content.content ||
           content?.content?.sections ||
           content?.content?.[0]?.subtopics ||
           content?.content?.Sections ||
@@ -48,7 +81,7 @@ const ChapterContent = ({ chapter, content }) => {
             className="border bg-blue-100 p-4 rounded-lg bgwhite shadow-sm"
           >
             <h2 className="font-semibold text-lg text-blue-600 mb-2">
-              {item.title}
+              {item?.title}
             </h2>
             <p className="text-gray-800">{item.explanation}</p>
             {item?.subsections && <div>🔥{item.subsections[1].title}</div>}
@@ -70,11 +103,12 @@ const ChapterContent = ({ chapter, content }) => {
               <div className="mt-4">
                 <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
                   <code>
-                    {item.codeExample||item.codeExample.example ||
+                    {item.codeExample||item.codeExample?.code||item.codeExample.example ||
                       item.codeExample.exampleBase ||
                       item.codeExample.exampleChild}
                   </code>
                 </pre>
+                <h1>{item?.codeExample?.description}</h1>
               </div>
             )}
             {item.code && (
@@ -93,6 +127,32 @@ const ChapterContent = ({ chapter, content }) => {
                     <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
                       <code>{char.code}</code>
                     </pre>
+                  </div>
+                ))}
+              </div>
+            )}
+            {item?.techniques && (
+              <div className="mt-4">
+                {item?.techniques.map((char, index) => (
+                  <div key={index} className="mt-3">
+                    <h1 className='font-bold'>{char.title}</h1>
+                    <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
+                      <code>{char.codeExample}</code>
+                    </pre>
+                    <h1 className="ml-4">{char.explanation}</h1>
+                  </div>
+                ))}
+              </div>
+            )}
+            {item?.concepts && (
+              <div className="mt-4">
+                {item?.concepts.map((char, index) => (
+                  <div key={index} className="mt-3">
+                    <h1 className='font-bold'>{char.title}</h1>
+                    <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
+                      <code>{char.codeExample}</code>
+                    </pre>
+                    <h1 className="ml-4">{char.explanation}</h1>
                   </div>
                 ))}
               </div>
@@ -200,7 +260,6 @@ const ChapterContent = ({ chapter, content }) => {
                   </div>
                 ))}
               </div>
-              // considerations
             )}
             {item?.caveats  && (
               <div className="mt-4">
@@ -233,7 +292,6 @@ const ChapterContent = ({ chapter, content }) => {
                   </div>
                 ))}
               </div>
-              // considerations
             )}
             {item?.tools  && (
               <div className="mt-4">
@@ -246,31 +304,25 @@ const ChapterContent = ({ chapter, content }) => {
                 ))}
               </div>
             )}
-            {/* {item?.tools  && (
-              <div className="mt-4">
-                <h1 className="font-semibold capitalize">tools :- </h1>
-                {item?.tools.map((char, index) => (
-                  <div className="ml-4 flex flex-col gap-1 mt-3" key={index}>
-                    <h1 className="font-semibold">{char}</h1>
-                  </div>
-                ))}
-              </div>
-            )} */}
             {item?.code && item.examples && (
               <div className="mt-4">
                 {item?.examples.map((item, index) => {
                   <h1>{item.code}</h1>;
                 })}
 
-                {/* {item.codeExample.example && ( */}
                 <pre className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
                   <code>{item?.code}</code>
-                  {/* <code>{item.codeExample.example || item.codeExample.exampleBase ||item.codeExample.exampleChild || item?.subsections?.example?.code}</code> */}
                 </pre>
               </div>
             )}
           </div>
         ))}
+      </div> */}
+ 
+      <div className="space-y-4 mt-6">
+        {
+          
+        }
       </div>
     </div>
   );

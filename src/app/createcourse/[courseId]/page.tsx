@@ -112,12 +112,34 @@ const CourseLayout = () => {
     Chapters.forEach((chapter, index) => {
       let content = "";
       let videoId = "";
-      const prompt =
-        "Explain the concept in Detail on topic" +
-        course?.name +
-        ", Chapter" +
-        chapter.ChapterName +
-        ", in JSON format with list or array with field as title,explaination on give chapter in detail , code Example(Code filed in <predcode> format) if applicable";
+      
+      const prompt = `Generate a strict JSON array for a chapter explanation on the topic below.
+
+Each item in the array must follow this structure:
+
+Required fields:
+- title: string
+- explanation: string
+- codeExample: { description: string, code: string } — code must be wrapped in <predcode>...</predcode>
+- notes: string
+
+Optional fields (include only if relevant):
+- advantages: array of strings
+- bestPractices: array of strings
+- coolStuff: array of strings
+
+The output must be a pure JSON array. No markdown, no surrounding text. No extra keys outside this schema.
+
+Topic: ${course.name}, Chapter: ${chapter.ChapterName}
+
+Explain the concepts clearly and provide examples where applicable. Stick strictly to the structure.
+`
+      // const prompt =
+      //   "Explain the concept in Detail on topic" +
+      //   course?.name +
+      //   ", Chapter" +
+      //   chapter.ChapterName +
+      //   ", in JSON format with list or array with field as title,explaination on give chapter in detail , code Example(Code filed in <predcode> format) if applicable";
 
       const getAiRespones = async () => {
         try {
