@@ -19,7 +19,6 @@ const ChapterContent = ({ chapter, content }) => {
       // First: Unescape the JSON string
       const unescaped = input.replace(/\\n/g, "\n").replace(/\\"/g, '"');
       
-      // Second: Parse the clean JSON string
       return JSON.parse(unescaped);
     } catch (err) {
       console.warn("Failed to parse JSON content:", err);
