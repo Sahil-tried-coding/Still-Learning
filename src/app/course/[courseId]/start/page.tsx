@@ -32,13 +32,13 @@ const CourseStart = () => {
 
     const getCourse = async()=>{
         const result = await db.select().from(CourseList).where(eq(CourseList.courseId,courseId))
-        console.log(result[0])
+        console.log( "this is fucling", result[0])
         setCourse(result[0])
     }
   return (
     <div className='flex'>
 
-    <div className='hidden md:block min-w-80 max-w-80 bg-white h-screen border-r-2 '>
+    <div className='hidden md:block min-w-80 max-w-80 bg-white h-max border-r-2 '>
         
 
 <div className=' '>
@@ -47,7 +47,7 @@ const CourseStart = () => {
     <div className='flex flex-col  '>
         {
             course?.courseOutput?.Chapters.map((chapter,index)=>(
-                <div className={`cursor-pointer  ${selecteChapter.length == chapter.ChapterName.length && "bg-blue-200" } `}  onClick={()=>{getChapterContent(index);setSelecteChapter(chapter.ChapterName)}} key={index}>
+                <div className={`cursor-pointer  ${selecteChapter?.chapterId == chapter.chapterId && "bg-blue-200" } `}  onClick={()=>{getChapterContent(index);setSelecteChapter(chapter.ChapterName)}} key={index}>
                     <ChapterCard chapter={chapter} index={index}/>
                 </div>
             ))
@@ -58,7 +58,7 @@ const CourseStart = () => {
 
 
     </div>
-        <div className='p-12'>
+        <div className='p-12 overflow-x-hidden'>
             <ChapterContent content={chapterContent}  chapter={selecteChapter}/> 
         </div>
     </div>

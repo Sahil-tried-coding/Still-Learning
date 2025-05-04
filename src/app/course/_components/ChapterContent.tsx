@@ -46,7 +46,7 @@ const ChapterContent = ({ chapter, content }) => {
 
 
   return (
-    <div className="p-4 space-y-6">
+    <div className="p-4 space-y-6 overflow-x-hidden">
       <h1 className="font-semibold text-2xl">
         {isArrayContent
           ? content?.content[0]?.title
@@ -328,11 +328,15 @@ const ChapterContent = ({ chapter, content }) => {
              <h2 className="font-semibold text-lg text-blue-600 mb-2">
               {item?.title}
             </h2>
-              <h1 className="ml-4 text-gray-800 mb-2">{item.explanation}</h1>
-              <pre  className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
-                <h1 className="bg-white text-black p-2 mb-2">{item.codeExample.description} </h1>
-                <code>{item.codeExample.code}</code>
+            {item?.explanation && <h1 className="ml-4 text-gray-800 mb-2">{item?.explanation}</h1>}
+              
+              {
+                item?.codeExample && <pre  className="bg-black text-white text-sm p-4 rounded-lg overflow-auto whitespace-pre-wrap">
+                <h1 className="bg-blue-20 underline text-white p-2 mb-2">{item?.codeExample?.description} </h1>
+                <code>{item?.codeExample?.code}</code>
               </pre>
+              }
+              
               <h1 className="font-semibold mt-1.5">Notes : - </h1>
               <h1 className="ml-4 mt-1.5">  {item.notes}</h1>
               {item.bestPractices&&<h1 className="font-semibold mt-1.5">Best Practises</h1>}
@@ -373,7 +377,7 @@ const ChapterContent = ({ chapter, content }) => {
                item.realWorldUseCases && item.realWorldUseCases.map((bp,index)=>(
                 <div key={index}>
                   <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
                     
                     {bp}</h1>
                 </div>
@@ -385,7 +389,7 @@ const ChapterContent = ({ chapter, content }) => {
                item.commonMistakes && item.commonMistakes.map((bp,index)=>(
                 <div key={index}>
                   <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
                     
                     {bp}</h1>
                 </div>
@@ -397,7 +401,7 @@ const ChapterContent = ({ chapter, content }) => {
                item.interviewTips && item.interviewTips.map((bp,index)=>(
                 <div key={index}>
                   <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
                     
                     {bp}</h1>
                 </div>
