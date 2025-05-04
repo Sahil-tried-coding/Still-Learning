@@ -113,34 +113,62 @@ const CourseLayout = () => {
       let content = "";
       let videoId = "";
       
-      const prompt = `Generate a strict JSON array for a chapter explanation on the topic below.
+//       const prompt = `Generate a strict JSON array for a chapter explanation on the topic below.
 
-Each item in the array must follow this structure:
+// Each item in the array must follow this structure:
 
-Required fields:
-- title: string
-- explanation: string
-- codeExample: { description: string, code: string } — code must be wrapped in <predcode>...</predcode>
-- notes: string
+// Required fields:
+// - title: string
+// - explanation: string
+// - codeExample: { description: string, code: string } — code must be wrapped in <predcode>...</predcode>
+// - notes: string
 
-Optional fields (include only if relevant):
-- advantages: array of strings
-- bestPractices: array of strings
-- coolStuff: array of strings
+// Optional fields (include only if relevant):
+// - advantages: array of strings
+// - bestPractices: array of strings
+// - coolStuff: array of strings
 
-The output must be a pure JSON array. No markdown, no surrounding text. No extra keys outside this schema.
+// The output must be a pure JSON array. No markdown, no surrounding text. No extra keys outside this schema.
 
-Topic: ${course.name}, Chapter: ${chapter.ChapterName}
+// Topic: ${course.name}, Chapter: ${chapter.ChapterName}
 
-Explain the concepts clearly and provide examples where applicable. Stick strictly to the structure.
-`
+// Explain the concepts clearly and provide examples where applicable. Stick strictly to the structure.
+// `
+
+
+
       // const prompt =
       //   "Explain the concept in Detail on topic" +
       //   course?.name +
       //   ", Chapter" +
       //   chapter.ChapterName +
       //   ", in JSON format with list or array with field as title,explaination on give chapter in detail , code Example(Code filed in <predcode> format) if applicable";
+      const prompt = `Generate a strict JSON array for a chapter explanation on the topic below.
 
+      Each item in the array must follow this structure:
+      
+      Required fields:
+      - title: string
+      - explanation: string
+      - codeExample: { description: string, code: string } — code should be plain string (NO HTML or markdown tags!)
+      - notes: string
+      
+      Optional fields (include only if relevant):
+      - advantages: array of strings
+      - bestPractices: array of strings
+      - coolStuff: array of strings
+      - disadvantages: array of strings
+      - commonMistakes: array of strings
+      - interviewTips: array of strings
+      - realWorldUseCases: array of strings
+      
+      Return ONLY the JSON array. No markdown, no explanation, no text outside the array. Do not wrap code in tags or backticks.
+      
+      Topic: ${course.name}, Chapter: ${chapter.ChapterName}
+      
+      Explain the concepts clearly. Use clean, parsable JSON.
+      `;
+      
       const getAiRespones = async () => {
         try {
           getYoutubeVideo(course?.name + ":" + chapter.ChapterName).then(
