@@ -3,7 +3,7 @@ import YouTube from "react-youtube";
 
 const opts = {
   height: "390",
-  width: "1140",
+  width: "740",
   playerVars: {
     autoplay: 0,
   },
@@ -59,9 +59,13 @@ const ChapterContent = ({ chapter, content,course }) => {
 
       {content?.videoId && course?.includeVideo == "Yes" && (
         <YouTube
-          className="w-full mx-auto"
+        // height: "390",
+  // width: "1140",
+          // className="md:h-[390px] md:w-[1140px] h-[300px] w-[450px]"
+          className="md:px-48"
           videoId={content.videoId}
           opts={opts}
+          
         />
       )}
        
@@ -340,9 +344,12 @@ const ChapterContent = ({ chapter, content,course }) => {
               {item.bestPractices&&<h1 className="font-semibold mt-1.5">Best Practises</h1>}
               {
                item.bestPractices && item.bestPractices.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                    <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%]">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className=" flex gap-1.5" >
+                    
                     {bp}</h1>
                 </div>
                ))
@@ -350,20 +357,31 @@ const ChapterContent = ({ chapter, content,course }) => {
               {item.advantages&&<h1 className="font-semibold mt-1.5">Advantages</h1>}
               {
                item.advantages && item.advantages.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%] ">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className="" >
                     
                     {bp}</h1>
                 </div>
+                // <div key={index}>
+                //   <h1 className="ml-4 mt-1.5 flex gap-1.5" >
+                //     <div className="h-7 w-8">
+                //     <div className=" bg-blue-600 font-semibold text-white border rounded-full text-center">{index+1}</div>
+                //     </div>
+                //     {bp}</h1>
+                // </div>
                ))
               }
               {item.disadvantages&&<h1 className="font-semibold mt-1.5">Disadvantages</h1>}
               {
                item.disadvantages && item.disadvantages.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%]">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className=" flex gap-1.5" >
                     
                     {bp}</h1>
                 </div>
@@ -373,9 +391,11 @@ const ChapterContent = ({ chapter, content,course }) => {
 
               {
                item.realWorldUseCases && item.realWorldUseCases.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%]">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className=" flex gap-1.5" >
                     
                     {bp}</h1>
                 </div>
@@ -385,9 +405,11 @@ const ChapterContent = ({ chapter, content,course }) => {
 
               {
                item.commonMistakes && item.commonMistakes.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%]">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className=" flex gap-1.5" >
                     
                     {bp}</h1>
                 </div>
@@ -397,9 +419,11 @@ const ChapterContent = ({ chapter, content,course }) => {
 
               {
                item.interviewTips && item.interviewTips.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%]">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className=" flex gap-1.5" >
                     
                     {bp}</h1>
                 </div>
@@ -409,9 +433,11 @@ const ChapterContent = ({ chapter, content,course }) => {
 
               {
                item.assignments && item.assignments.map((bp,index)=>(
-                <div key={index}>
-                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
-                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
+                <div className="flex items-center ml-4 mt-1.5" key={index}>
+                  <div className="w-[5%] md:w-[4%]">
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  </div>
+                  <h1 className=" flex gap-1.5" >
                     
                     {bp}</h1>
                 </div>

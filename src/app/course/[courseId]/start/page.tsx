@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import ChapterCard from '../../_components/ChapterCard'
 import ChapterContent from '../../_components/ChapterContent'
 import { useParams } from 'next/navigation'
+import Image from 'next/image'
 
 const CourseStart = () => {
   const { courseId } = useParams() as { courseId: string };
@@ -36,9 +37,9 @@ const CourseStart = () => {
         setCourse(result[0])
     }
   return (
-    <div className='flex'>
+    <div className='flex flex-col md:flex-row'>
 
-    <div className='hidden md:block min-w-80 max-w-80 bg-white h-max border-r-2 '>
+    <div className='block w-[100%] p-3 md:p-0  md:block md:min-w-80 md:max-w-80 bg-white h-max border-r-2 '>
         
 
 <div className=' '>
@@ -58,7 +59,21 @@ const CourseStart = () => {
 
 
     </div>
-        <div className='p-12 overflow-x-hidden'>
+        <div className='md:p-12 p-4 overflow-x-hidden'>
+            {
+                selecteChapter.length == 0 && 
+                <div className='lg:py-40 lg:px-40 flex  translate-7 items-center justify-center'>
+                    {/* <div className='flex gap-1 items-center font-semibold text-2xl'>
+                    <Image src={"/8d34699f-7474-43c6-a0f0-dfde1ef62907.webp"} alt='logo' height={100} width={100} />
+                    <h1>Still Learning</h1>
+                    </div> */}
+                    <h1 className="text-4xl text-black border-blue-600 capitalize border-4 p-8 items-center justify-center font-semibold text-center">
+  Pick a chapter and dive in! 🎯📘
+</h1>
+
+                    {/* <h1>Click on the Chapter to get started now 🚀✅🔥🎀</h1> */}
+                </div>
+            }
             <ChapterContent course={course} content={chapterContent}  chapter={selecteChapter}/> 
         </div>
     </div>
