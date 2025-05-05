@@ -161,6 +161,7 @@ const CourseLayout = () => {
       - commonMistakes: array of strings
       - interviewTips: array of strings
       - realWorldUseCases: array of strings
+      - assignments : array of strings
       
       Return ONLY the JSON array. No markdown, no explanation, no text outside the array. Do not wrap code in tags or backticks.
       

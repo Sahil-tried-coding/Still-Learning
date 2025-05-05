@@ -47,7 +47,7 @@ const CourseStart = () => {
     <div className='flex flex-col  '>
         {
             course?.courseOutput?.Chapters.map((chapter,index)=>(
-                <div className={`cursor-pointer  ${selecteChapter?.id == chapter.id && "bg-blue-200" } `}  onClick={()=>{getChapterContent(index);setSelecteChapter(chapter.ChapterName)}} key={index}>
+                <div className={`cursor-pointer  ${selecteChapter?.ChapterName == chapter.ChapterName && "bg-blue-200" } `}  onClick={()=>{getChapterContent(index);setSelecteChapter(chapter.ChapterName)}} key={index}>
                     <ChapterCard chapter={chapter} index={index}/>
                 </div>
             ))

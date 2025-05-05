@@ -44,7 +44,7 @@ const ChapterContent = ({ chapter, content }) => {
 
 
   return (
-    <div className="p-4 space-y-6 overflow-x-hidden">
+    <div className="p-0 space-y-6 overflow-x-hidden">
       <h1 className="font-semibold text-2xl">
         {isArrayContent
           ? content?.content[0]?.title
@@ -397,6 +397,18 @@ const ChapterContent = ({ chapter, content }) => {
 
               {
                item.interviewTips && item.interviewTips.map((bp,index)=>(
+                <div key={index}>
+                  <h1 className="ml-4 mt-1.5 flex gap-1.5" >
+                  <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
+                    
+                    {bp}</h1>
+                </div>
+               ))
+              }
+              {item.assignments&&<h1 className="font-semibold mt-1.5">Assignments </h1>}
+
+              {
+               item.assignments && item.assignments.map((bp,index)=>(
                 <div key={index}>
                   <h1 className="ml-4 mt-1.5 flex gap-1.5" >
                   <div className="h-7 w-8 bg-black font-semibold text-white rounded-full text-center">{index+1}</div>
