@@ -9,7 +9,7 @@ const opts = {
   },
 };
 
-const ChapterContent = ({ chapter, content }) => {
+const ChapterContent = ({ chapter, content,course }) => {
 
 
   function safeJsonContent(input: string | object) {
@@ -57,7 +57,7 @@ const ChapterContent = ({ chapter, content }) => {
           : content?.content?.topic}
       </p>
 
-      {content?.videoId && (
+      {content?.videoId && course?.includeVideo == "Yes" && (
         <YouTube
           className="w-full mx-auto"
           videoId={content.videoId}

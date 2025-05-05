@@ -59,7 +59,7 @@ const CourseStart = () => {
 
     </div>
         <div className='p-12 overflow-x-hidden'>
-            <ChapterContent content={chapterContent}  chapter={selecteChapter}/> 
+            <ChapterContent course={course} content={chapterContent}  chapter={selecteChapter}/> 
         </div>
     </div>
 
