@@ -10,7 +10,7 @@ const Explore = () => {
   console.log(career)
   return (
     <div className=''>
-      <div className='flex items-center gap'>
+      <div className='flex items-center '>
       <Image src={"/8d34699f-7474-43c6-a0f0-dfde1ef62907.webp"} width={100} height={100} alt='logo' />
       <h1 className='mt-4  capitalize font-semibold text-2xl text-center whitespace-nowrap'>Confused About Career options and what skills required? here's the breakdown to learn</h1>
 
