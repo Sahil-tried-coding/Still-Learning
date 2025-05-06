@@ -53,17 +53,17 @@ const Sidebar = () => {
     <div>
       <Image onClick={()=>setOpenSidebar(!openSidebar)} className="absolute top-5.5 left-4 cursor-pointer " src={"/bars.png"} width={35} height={35} alt="close" />
       {
-      openSidebar && <div className="h-screen relative w-[264px] border-r bg-white shadow flex flex-col justify-between ">
+      openSidebar && <div className="h-screen backdrop-blur-3xl w-screen relative md:w-[264px] border-r bg-white shadow flex flex-col justify-between ">
       <Image onClick={()=>setOpenSidebar(!openSidebar)} className="absolute top-3 right-3 cursor-pointer " src={"/close.png"} width={20} height={20} alt="close" />
       {/* Top Section */}
       <div>
         {/* Logo & Title */}
-        {/* <div className="flex items-center px-4 py-6 gap-2 mt-3.5">
+        <div className="flex items-center px-4 py-6 gap-2 mt-3.5">
           <Image src={logo} alt="logo" width={50} height={50} />
           <h1 className="font-semibold text-xl whitespace-nowrap">
             Still Learning
           </h1>
-        </div> */}
+        </div>
 
         {/* Nav Links */}
         <div className="flex flex-col px-5 gap-1.5 mt-16">

@@ -9,7 +9,7 @@ const AddCourse = () => {
   const { user } = useUser();
 
   return (
-    <section className="flex flex-col md:flex-row items-start md:items-center justify-between px-6 md:px-12 lg:px-20 py-6 bg-white rounded-xl shadow-sm">
+    <section className=" flex flex-col md:flex-row items-start md:items-center justify-between px-20 md:px-12 lg:px-20 py-6 bg-white rounded-xl shadow-sm">
       <div>
         <h1 className="text-2xl font-medium text-gray-800">
           Hello,{" "}
@@ -17,7 +17,7 @@ const AddCourse = () => {
             {user?.fullName || "Instructor"}
           </span>
         </h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <p className=" md:block hidden pr-6 text-sm text-gray-500 mt-1 whitespace-nowrap">
           Ready to create your next course with AI? 🚀
         </p>
       </div>

@@ -66,7 +66,7 @@ const UserCourseList = () => {
 
   return (
     <div className="px-4 md:px-20">
-      <h1 className="md:mt-10 font-semibold text-blue-600 text-center text-xl">Your Courses</h1>
+      <h1 className="md:mt-10 font-semibold text-blue-600 text-center text-xl mt-4">Your Courses</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
         {allCourse.map((item) => (
