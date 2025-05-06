@@ -9,7 +9,7 @@ const DashboardLayout = ({children}:ReactNode) => {
             <Sidebar/>
         </div>
         <div className='w-full'>
-          <SidebarHeader/>
+          {/* <SidebarHeader/> */}
        <div className='p-3'>
        {children}
        </div>
