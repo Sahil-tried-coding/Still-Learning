@@ -3,18 +3,18 @@ import svg from "../../../public/MessyDoodle.svg"
 import Link from 'next/link'
 const Hero = () => {
   return (
-    <section className="bg-white lg:grid  lg:place-content-center">
+    <section className="w-screen h-screen flex flex-col items-center justify-center  bg-white lg:grid  lg:place-content-center">
   <div
-    className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
+    className="md:mx-auto w-screen max-w-screen-xl px-3 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
   >
-    <div className="max-w-prose text-left">
+    <div className="max-w-prose md:text-left text-center">
       <h1 className="text-4xl text-center font-bold text-gray-900 sm:text-5xl">
         Still Learning
-        <div className="text-blue-500 whitespace-nowrap mt-3"> Ai Powered Course Generator </div>
+        <div className="text-blue-500 md:whitespace-nowrap mt-3 mr-2"> Ai Powered Course Generator </div>
         {/* conversions */}
       </h1>
 
-      <p className="mt-6 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
+      <p className="mt-6 text-base text-pretty text-center pr-7 text-gray-700 sm:text-lg/relaxed">
       Still Learning is an AI-driven course generator that creates customized learning paths based on your goals and interests. Whether You are starting fresh or upskilling, it delivers structured, efficient, and goal-focused content in seconds.
       </p>
 
@@ -32,7 +32,7 @@ const Hero = () => {
     <svg
       xmlns={svg}
       viewBox="0 0 1024 768"
-      className="mx-auto hidden max-w-md text-gray-900 md:block"
+      className="md:mx-auto mt-14 ml-12  md:max-w-md text-gray-900 md:block"
     >
       <g fill="none" fillRule="evenodd">
         <g fill="#4a90e2">
