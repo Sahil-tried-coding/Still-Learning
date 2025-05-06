@@ -24,14 +24,14 @@ const Topic_description = () => {
 
 
   return (
-    <div className='mx-20 lg:px-44 lg:mt-12 flex flex-col gap-8'>
+    <div className='md:mx-20 mt-16 mx-6 lg:px-44 lg:mt-12 flex flex-col gap-8'>
       <div>
-        <label  className=' capitalize'> {`Type something you want a course on  maybe "TypeScript", maybe "Yoga"… or maybe how to finally finish what you start. `}
+        <label  className=' font-semibold capitalize'> {`Type something you want a course on  maybe "TypeScript", maybe "Yoga"… or maybe how to finally finish what you start. `}
           <Input required={true} value={userCourseInput?.topic || ""} name='topic' onChange={e=>handleTopicInput(e.target.name,e.target.value)}  className='mt-3 capitalize font-semibold text-lg' placeholder='Enter a Topic '/>
         </label>
       </div>
       <div>
-        <label > {`Want the course to be more on point? Add extra details (totally optional).`}
+        <label className=' font-semibold'> {`Want the course to be more on point? Add extra details (totally optional).`}
           <Textarea required value={userCourseInput?.description} name='description' onChange={e=>handleTopicInput(e.target.name,e.target.value)} className='mt-3 capitalize font-semibold text-lg'  placeholder='Bit Details '/>
         </label>
       </div>

@@ -232,15 +232,15 @@ NoOfChapters:${userCourseInput.chapters}, in strictly JSON format`;
   return (
     <div className="">
       <div className="flex items-center justify-center ">
-        <div className="text-3xl font-semibold text-blue-500">
+        <div className="mt-3 md:mt-0 text-3xl font-semibold text-blue-500">
           Create Course
         </div>
       </div>
 
       {/* stepper */}
-      <div className="flex mt-10 items-center justify-center ">
+      <div className=" flex mt-6 md:mt-10 items-center justify-center ">
         {StepperOptions.map((item, index) => (
-          <div className="flex items-center gap-5" key={index}>
+          <div className=" flex items-center gap-5" key={index}>
             <div className="flex ml-2 flex-col items-center">
               <div
                 className={`text-3xl p-3 w-[60px] text-white rounded-full ${
@@ -250,7 +250,7 @@ NoOfChapters:${userCourseInput.chapters}, in strictly JSON format`;
                 {item.icon}
               </div>
 
-              <div>{item.name}</div>
+              <div className="text-xs mt-1 md:text-base md:mt-0">{item.name}</div>
             </div>
             {index !== StepperOptions.length - 1 && (
               <div
@@ -269,7 +269,7 @@ NoOfChapters:${userCourseInput.chapters}, in strictly JSON format`;
         {activeIndex == 2 && <Options />}
       </div>
 
-      <div className="flex justify-between md:px-11 mt-14 lg:px-44">
+      <div className="flex justify-between md:px-11 mt-6.5 px-6 md:mt-14 lg:px-44">
         <Button
           disabled={activeIndex == 0}
           variant={"outline"}

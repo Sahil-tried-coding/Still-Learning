@@ -211,7 +211,7 @@ const CourseLayout = () => {
 
   return (
     <div>
-      <div className="md:px-22 lg:px-48 mt-4 lg:flex lg:flex-col lg:items-center">
+      <div className="w-full px md:px-22 lg:px-48 mt-4 lg:flex lg:flex-col lg:items-center">
       <h1 className="font-bold text-center text-4xl text-blue-600 tracking-wide mb-6">
         Course Layout
       </h1>
@@ -221,15 +221,15 @@ const CourseLayout = () => {
 
         {/* course details */}
         <CourseDetails course={course} />
-
-        <ChapterDetails course={course} />
-
         <Button
-          className="bg-blue-500 text-white font-semibold cursor-pointer my-3.5"
+          className="bg-green-600 text-white font-semibold cursor-pointer my-5.5 w-[90%] mx-4 h-14"
           onClick={GenerateCourseContent}
         >
           Generate Content
         </Button>
+        <ChapterDetails course={course} />
+
+        
       </div>
       <LoadingDailog loading={loading} />
     </div>
