@@ -4,7 +4,7 @@ import Hero from './_components/Hero'
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='overflow-x-hidden'>
       <Header/>
       <Hero/>
 

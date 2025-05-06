@@ -3,9 +3,9 @@ import svg from "../../../public/MessyDoodle.svg"
 import Link from 'next/link'
 const Hero = () => {
   return (
-    <section className="w-screen h-screen flex flex-col items-center justify-center  bg-white lg:grid  lg:place-content-center">
+    <section className="w-screen overflow-x-hidden h-max md:h-max flex flex-col items-center justify-center  bg-white lg:grid  lg:place-content-center">
   <div
-    className="md:mx-auto w-screen max-w-screen-xl px-3 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
+    className="md:mx-auto w-screen max-w-screen-xl px-3 py-14 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
   >
     <div className="max-w-prose md:text-left text-center">
       <h1 className="text-4xl text-center font-bold text-gray-900 sm:text-5xl">
@@ -14,14 +14,14 @@ const Hero = () => {
         {/* conversions */}
       </h1>
 
-      <p className="mt-6 text-base text-pretty text-center pr-7 text-gray-700 sm:text-lg/relaxed">
+      <p className="mt-6 text-base text-pretty text-center px-7 text-gray-700 sm:text-lg/relaxed">
       Still Learning is an AI-driven course generator that creates customized learning paths based on your goals and interests. Whether You are starting fresh or upskilling, it delivers structured, efficient, and goal-focused content in seconds.
       </p>
 
-      <div className="mt-4 flex gap-4 sm:mt-6">
+      <div className="hidden mt-4 md:flex gap-4 sm:mt-6">
         <Link
           className="inline-block rounded border border-blue-600 bg-blue-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-          href={"/createcourse"}
+          href={"/dashboard"}
         >
           Get Started 
         </Link>
@@ -32,7 +32,7 @@ const Hero = () => {
     <svg
       xmlns={svg}
       viewBox="0 0 1024 768"
-      className="md:mx-auto mt-14 ml-12  md:max-w-md text-gray-900 md:block"
+      className="md:mx-auto mt-14 ml-12 md:ml-36 md:mt-0  md:max-w-md text-gray-900 md:block"
     >
       <g fill="none" fillRule="evenodd">
         <g fill="#4a90e2">
