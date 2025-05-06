@@ -94,19 +94,19 @@ const Finish = () => {
       }
     };
   return (
-    <div className='mx-10 md:px-22 lg:mx-44'>
-      <h1 className="font-bold text-center text-xl text-blue-600 mb-1.5 ">
-      Your AI-powered {course?.name} journey starts here with <span className='bg-blue-400 text-white px-4 py-1 rounded-md '>  Still Learning.</span></h1> <h1 className="font-bold text-center text-xl text-blue-600 mb-6">Dive in, share with others, and keep the curiosity alive!</h1> 
+    <div className='mt-3 mx-3 md:px-22 lg:mx-44'>
+      <h1 className="font-bold mx-20 text-center text-xl text-blue-600 mb-1.5 ">
+      Your AI-powered {course?.name} journey starts here with <span className='bg-white whitespace-nowrap text-black md:bg-black md:text-white md:px-4 py-1 rounded-md '>  Still Learning.</span></h1> <h1 className="font-bold text-center text-xl text-blue-600 mb-6">Dive in, share with others, and keep the curiosity alive!</h1> 
         {/* Congrats you have successfully generated ai powered {course?.name} course  */}
       {/* </h1> */}
       <BasicCourseLayout course={course}/>
 
 
-    <h1 className="font-semibold my-2.5 text-xl text-blue-600 tracking-wide">
+    <h1 className="font-semibold my-2.5 text-xl text-blue-600 tracking-wide ">
       Course URL:
     </h1>
 
-      <h1 className='border w-max p-2 text-center text-gray-400 flex items-center gap-3'>{process.env.NEXT_PUBLIC_HOST_NAME}course/view/{course?.courseId}
+      <h1 className='text-xs border max-w-max p-2 text-center text-gray-400 flex items-center gap-3'>{process.env.NEXT_PUBLIC_HOST_NAME}course/view/{course?.courseId}
 
         <Image onClick={async()=>await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_HOST_NAME+"course/view/"+course?.courseId)} className='cursor-pointer' src={"/copy.png"} width={25} height={25 }  alt='copy'/>
       </h1>

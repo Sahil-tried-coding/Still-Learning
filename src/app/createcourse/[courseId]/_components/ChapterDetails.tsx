@@ -5,7 +5,7 @@ import EditBasicCourseInfo from './EditBasicCourseInfo'
 const ChapterDetails = ({course}) => {
   return (
     <div>
-        <h1 className="font-semibold text-left text-xl text-blue-500 mt-4.5">Chapters / Modules </h1>
+        <h1 className="font-semibold text-left text-xl text-blue-500 mt-4.5 px-4">Chapters / Modules </h1>
 
         <div>
             {
@@ -23,8 +23,8 @@ const ChapterDetails = ({course}) => {
 
                         <div className='flex flex-col gap-2'>
             
-            <div className='font-semibold'>{item.ChapterName} </div>
-                            <div className='text-gray-400  text-xs flex-none w-[85%]'>{item.About}</div>
+            <div className='font-semibold ml-1.5'>{item.ChapterName} </div>
+                            <div className='text-gray-400  text-xs flex-wrap w-[85%]'>{item.About}</div>
                             <div className='flex items-center mb-2 gap-1.5'>
                                 <Image alt='clock' width={25} height={25} src={"/clock.png"}/>
                                 {item.Duration}
