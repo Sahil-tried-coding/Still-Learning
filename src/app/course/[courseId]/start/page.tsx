@@ -62,7 +62,7 @@ const CourseStart = () => {
         <div className='md:p-12 p-4 overflow-x-hidden'>
             {
                 selecteChapter.length == 0 && 
-                <div className='lg:py-40 lg:px-40 flex  translate-7 items-center justify-center'>
+                <div className='lg:py-40 lg:px-40 flex  md:translate-7 items-center justify-center'>
                     {/* <div className='flex gap-1 items-center font-semibold text-2xl'>
                     <Image src={"/8d34699f-7474-43c6-a0f0-dfde1ef62907.webp"} alt='logo' height={100} width={100} />
                     <h1>Still Learning</h1>

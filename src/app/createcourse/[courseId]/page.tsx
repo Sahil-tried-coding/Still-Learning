@@ -236,4 +236,4 @@ const CourseLayout = () => {
   );
 };
 
-export default CourseLayout;
+export default CourseLayout;   

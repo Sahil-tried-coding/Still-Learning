@@ -18,7 +18,7 @@ import { Loader2Icon } from 'lucide-react'
 import { eq } from 'drizzle-orm'
 
 
-const EditBasicCourseInfo = ({course}) => {
+const  EditBasicCourseInfo = ({course}) => {
 
 
   const [courseName, setCourseName] = useState<string>()
@@ -57,9 +57,9 @@ const [loading, setloading] = useState(false)
   <DialogTrigger><Image src={"/edit.png"} alt="edit" height={25} width={25}/></DialogTrigger>
   <DialogContent>
     <DialogHeader>
-      <DialogTitle className='text-center'>Edit the Course Name and Description</DialogTitle>
-      <DialogDescription>
-        <label  htmlFor="">
+      <DialogTitle className='text-center md:mt-0 mt-3'>Edit the Course Name and Description</DialogTitle>
+      <DialogDescription className='mt-2 text-left md:mt-0 m' >
+        <label   htmlFor="">
           Name 
           <Input onChange={(e)=>setCourseName(e.target.value)} name='courseName' className='my-2' defaultValue={course?.courseOutput?.CourseName} type="text" />
         </label>

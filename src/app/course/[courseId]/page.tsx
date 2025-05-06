@@ -35,7 +35,7 @@ const CourseView = () => {
         
       };
   return (
-    <div className='md:px-22'>
+    <div className='px-2 md:px-22'>
         <SidebarHeader/>
         <div className='md:px-44 mt-12 flex flex-col items-center justify-center'>
         <BasicCourseLayout course={course} />
