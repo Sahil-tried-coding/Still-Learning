@@ -1,4 +1,4 @@
-import { integer, json ,numeric, pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import { boolean, integer, json , pgTable, serial, varchar } from "drizzle-orm/pg-core";
 // import { numeric } from "drizzle-orm/sqlite-core";
 
 export const CourseList = pgTable("CourseList",{
@@ -21,5 +21,6 @@ export const ChapterList = pgTable("ChapterList",{
     videoId:varchar("videoId").notNull(),
     courseId:varchar("courseId").notNull(),
     content:json('content').notNull(),
-    chapterId:integer('chapterId').notNull()
+    chapterId:integer('chapterId').notNull(),
+    isCompleted:boolean('isCompleted').default(false)
 })
