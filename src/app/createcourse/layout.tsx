@@ -3,11 +3,8 @@ import React, { ReactNode, useState } from 'react';
 import SidebarHeader from '../dashboard/_components/Header';
 import { Userinput } from '../_context/Userinput';
 
-interface LayoutProps {
-  children: ReactNode;
-}
 
-const Courselayout = ({ children }: LayoutProps) => {
+const Courselayout = ({ children }) => {
   const [userCourseInput, setUserCourseInput] = useState(null);
 
   return (
