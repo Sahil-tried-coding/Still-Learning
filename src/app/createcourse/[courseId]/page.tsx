@@ -3,7 +3,6 @@ import { db } from "@/config/db";
 import { ChapterList, CourseList } from "@/config/schema";
 import { useUser } from "@clerk/nextjs";
 import { and, eq } from "drizzle-orm";
-import { v4 as uuidv4 } from "uuid";
 
 import React, { useEffect, useState } from "react";
 import BasicCourseLayout from "./_components/BasicCourseLayout";
@@ -13,7 +12,6 @@ import ChapterDetails from "./_components/ChapterDetails";
 import { Button } from "@/components/ui/button";
 import LoadingDailog from "../_component/LoadingDailog";
 import getYoutubeVideo from "@/config/Service";
-import { randomUUID } from "crypto";
 
 type courseType = {
   id: number;

@@ -31,6 +31,7 @@ const ChapterContent = ({ chapter, content,course }) => {
     console.log(error)
   }
 
+  console.log(chapter)
 
 
 

@@ -4,7 +4,6 @@ import { db } from "@/config/db";
 import { CourseList } from "@/config/schema";
 import { useUser } from "@clerk/nextjs";
 import { eq } from "drizzle-orm";
-import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 import Shimmer from "./Shimmer";
