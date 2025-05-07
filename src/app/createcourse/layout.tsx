@@ -1,3 +1,4 @@
+"use client"
 import React, { ReactNode, useState } from 'react';
 import SidebarHeader from '../dashboard/_components/Header';
 import { Userinput } from '../_context/Userinput';
