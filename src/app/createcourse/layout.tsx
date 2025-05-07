@@ -1,9 +1,9 @@
 "use client"
-import React, { ReactNode, useState } from 'react'
+import React, {  useState } from 'react'
 import SidebarHeader from '../dashboard/_components/Header'
 import { Userinput } from '../_context/Userinput'
 
-const Courselayout = (children) => {
+const Courselayout = ({children}) => {
   const [userCourseInput, setUserCourseInput] = useState()
 //  const [fireBaseImage,setFirebaseImage] = useState("")
 
