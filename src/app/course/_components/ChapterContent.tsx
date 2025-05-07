@@ -1,17 +1,11 @@
 "use client"
-import { Checkbox } from "@/components/ui/checkbox";
-import React, { useState } from "react";
+import React from "react";
 
 
 const ChapterContent = ({ chapter, content,course }) => {
 
 
-  const [isCompleted, setIsCompleted] = useState(false)
 
-  const onCompleted = async(e)=>{
-    setIsCompleted(e)
-    console.log("this is completed",isCompleted)
-  }
 
 
 

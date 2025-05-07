@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { TbAntennaBars5 } from "react-icons/tb";
 
 const CourseDetails = ({ course }) => {
   return (

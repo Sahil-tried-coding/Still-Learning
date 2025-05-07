@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import Sidebar from './_components/Sidebar'
-import SidebarHeader from './_components/Header'
 
 const DashboardLayout = ({children}:ReactNode) => {
   return (

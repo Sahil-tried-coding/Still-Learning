@@ -74,29 +74,8 @@ const Createcourse = () => {
     return false;
   };
 
-  // const generateCourseLayout = async ()=>{
-
-  //   // if (loading) return;
-  //   // setLoading(true);
-  //   const BASIC_PROMPT = 'Generate A Course Tutorial on Following Detail With field as Course Name, Description, Along with Chapter Name, about, Duration.'
-
-  //   const AI_PROMPT = ' Category: '+userCourseInput?.category+', Topic: '+userCourseInput?.topic+', Level: '+userCourseInput?.level+', Duration: '+userCourseInput?.duration+', NoOf Chapters: '+userCourseInput?.chapters+', in JSON format'
-
-  //   const FULL_PROMPT = BASIC_PROMPT + AI_PROMPT
-
-  // try {
-  //   const course = await generateCourseContent(FULL_PROMPT);
-  //   console.log("Generated Course:", course);
-  //   // handle output
-  // } catch (err) {
-  //   console.error("Error:", err);
-  //   alert("Too many requests. Try again soon.");
-  // } finally {
-  //   setLoading(false);
-  // }
-  // }
   const SaveCourseLayoutIntoDb = async (cousreLayout) =>{
-
+    setUserCourseInput(Userinput)
     const id = uuidv4();
     setLoading(true)
     const result = await db.insert(CourseList).values({
@@ -117,77 +96,7 @@ const Createcourse = () => {
     
   }
   const generateCourseLayout = async () => {
-//     const prompt = `Return JSON in the following format only:
 
-// {
-//   "course": {
-//     "category": "${userCourseInput.category}",
-//     "topic": "${userCourseInput.topic}",
-//     "level": "${userCourseInput.level}",
-//     "duration": "${userCourseInput.duration}",
-//     "numberOfChapters": ${userCourseInput.chapters},
-//     "name": "<Course Title>",
-//     "description": "<Brief description of the course>",
-//     "chapters": [
-//       {
-//         "title": "<Chapter 1 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 2 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 3 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 4 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 5 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 6 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 7 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-//       {
-//         "title": "<Chapter 8 title>",
-//         "summary": "<Short 1-2 line summary>"
-//       },
-
-//     ]
-//   }
-// }
-// Include course name, description, chapter names with brief best Explanation summaries, and total duration.  in  JSON format.
-// `;
-
-//     const prompt = `Return JSON in the following format only:
-
-//   "course": {
-//     "category": "...",
-//     "topic": "...",
-//     "level": "...",
-//     "duration": "...",
-//     "numberOfChapters": ...,
-//     "name": "...",
-//     "description": "...",
-//     "chapters": ["..."]
-//   }
-
-
-// Now generate a course tutorial with these values:
-// - Category: ${userCourseInput.category}
-// - Topic: ${userCourseInput.topic}
-// - Level: ${userCourseInput.level}
-// - Duration: ${userCourseInput.duration}
-// - Chapters: ${userCourseInput.chapters} Include course name, description, chapter names with summaries, and total duration.`;
 
     const prompt = `Generate A Course Tutorial on Following
 Detail With field as CourseName,

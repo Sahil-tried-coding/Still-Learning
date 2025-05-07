@@ -1,5 +1,4 @@
 "use client"
-import Header from '@/app/_components/Header'
 import BasicCourseLayout from '@/app/createcourse/[courseId]/_components/BasicCourseLayout'
 import ChapterDetails from '@/app/createcourse/[courseId]/_components/ChapterDetails'
 import CourseDetails from '@/app/createcourse/[courseId]/_components/CourseDetails'

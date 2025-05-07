@@ -63,7 +63,7 @@ const Explore = () => {
 
       {filteredCareers.length === 0 && (
         <div className='text-center mt-8 text-gray-500 text-sm'>
-          No career paths found for <strong>"{career}"</strong>.
+          No career paths found for <strong>{career}</strong>.
         </div>
       )}
     </div>

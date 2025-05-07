@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FaEllipsisVertical } from 'react-icons/fa6'
 import { IoReaderOutline } from 'react-icons/io5'
 import DropdownOptions from './DropdownOptions'

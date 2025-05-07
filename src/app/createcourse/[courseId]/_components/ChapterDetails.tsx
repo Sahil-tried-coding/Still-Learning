@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import EditBasicCourseInfo from './EditBasicCourseInfo'
 
 const ChapterDetails = ({course}) => {
   return (

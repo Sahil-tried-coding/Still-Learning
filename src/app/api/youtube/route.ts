@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     const res = await fetch(url)
     const data = await res.json()
     return NextResponse.json(data)
-  } catch (error) {
+  } catch  {
     return NextResponse.json({ error : 'Failed to fetch from YouTube' }, { status: 500 })
   }
 }

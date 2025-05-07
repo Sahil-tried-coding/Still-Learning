@@ -36,12 +36,13 @@ const [loading, setloading] = useState(false)
     course.courseOutput.CourseName = courseName
     course.courseOutput.Description = description
     
-    const result = await db.update(CourseList).set({
+      await db.update(CourseList).set({
       courseOutput:course?.courseOutput
     }).where(eq(CourseList.id,course.id))
     setloading(false)
     
 
+  
 
   }
 

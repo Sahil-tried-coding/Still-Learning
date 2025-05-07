@@ -1,4 +1,4 @@
-import { boolean, integer, json , pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import {  integer, json , pgTable, serial, varchar } from "drizzle-orm/pg-core";
 // import { numeric } from "drizzle-orm/sqlite-core";
 
 export const CourseList = pgTable("CourseList",{
