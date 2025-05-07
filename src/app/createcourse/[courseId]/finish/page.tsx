@@ -64,7 +64,6 @@ const Finish = () => {
       category: "",
     });
   
-    // const router = useRouter();
   
     const { user } = useUser();
   
@@ -96,9 +95,7 @@ const Finish = () => {
   return (
     <div className='mt-3 mx-3 md:px-22 lg:mx-44'>
       <h1 className="font-bold mx-20 text-center text-xl text-blue-600 mb-1.5 ">
-      Your AI-powered <span className=' capitalize'>{course?.name}</span> journey starts here with <span className='bg-white whitespace-nowrap text-black md:bg-black md:text-white md:px-4 py-1 rounded-md '>  Still Learning.</span></h1> <h1 className="font-bold text-center text-xl text-blue-600 mb-6">Dive in, share with others, and keep the curiosity alive!</h1> 
-        {/* Congrats you have successfully generated ai powered {course?.name} course  */}
-      {/* </h1> */}
+      Your AI-powered <span className=' capitalize'>{course?.name}</span> journey starts here with <span className='bg-white whitespace-nowrap text-black md:bg-black md:text-white md:px-4 py-1 rounded-md '>  Still Learning.</span></h1> <h1 className="font-bold text-center text-xl text-blue-600 mb-6">Dive in, Share with others, and keep the curiosity alive!</h1> 
       <BasicCourseLayout course={course}/>
 
 
