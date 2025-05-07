@@ -1,3 +1,4 @@
+import { Checkbox } from "@/components/ui/checkbox";
 import React from "react";
 import YouTube from "react-youtube";
 
@@ -10,6 +11,12 @@ const opts = {
 };
 
 const ChapterContent = ({ chapter, content,course }) => {
+
+
+  const onCompleted = async(e)=>{
+    console.log(e)
+  }
+
 
 
   function safeJsonContent(input: string | object) {
@@ -356,9 +363,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.bestPractices && item.bestPractices.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className="ml-1.5 md:ml-0" >
+                  <h1 className="ml-1.5 md:ml-0 flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -369,9 +376,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.advantages && item.advantages.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%] ">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className="" >
+                  <h1 className="flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -389,9 +396,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.disadvantages && item.disadvantages.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-red-500  font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className=" flex gap-1.5" >
+                  <h1 className="  flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -402,9 +409,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.coolStuff && item.coolStuff.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-green-600 font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-blue-600 font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className=" flex gap-1.5" >
+                  <h1 className="  flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -416,9 +423,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.realWorldUseCases && item.realWorldUseCases.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className=" flex gap-1.5" >
+                  <h1 className="  flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -430,9 +437,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.commonMistakes && item.commonMistakes.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-red-500  font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className=" flex gap-1.5" >
+                  <h1 className="  flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -444,9 +451,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.interviewTips && item.interviewTips.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className=" flex gap-1.5" >
+                  <h1 className=" flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -458,9 +465,9 @@ const ChapterContent = ({ chapter, content,course }) => {
                item.assignments && item.assignments.map((bp,index)=>(
                 <div className="flex items-center ml-4 mt-1.5" key={index}>
                   <div className="w-[10%] md:w-[4%]">
-                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-7 w-7 bg-black  font-semibold text-white rounded-full text-center">{index+1}</div>
+                  <div className="md:min-h-7 py-1 md:text-lg text-xs md:min-w-8 md:h-8 h-6 w-6 bg-green-500  font-semibold text-white rounded-full text-center">{index+1}</div>
                   </div>
-                  <h1 className=" flex gap-1.5" >
+                  <h1 className=" flex flex-1/2" >
                     
                     {bp}</h1>
                 </div>
@@ -472,6 +479,10 @@ const ChapterContent = ({ chapter, content,course }) => {
           
         }
       </div>
+      <label className="flex justify-end items-center gap-2">
+        <Checkbox onClick={e=>onCompleted(e)}/>
+        Mark as Completed 
+      </label>
     </div>
   );
 };
