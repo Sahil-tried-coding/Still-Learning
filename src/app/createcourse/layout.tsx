@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const Courselayout = ({ children }: LayoutProps) => {
-  const [userCourseInput, setUserCourseInput] = useState<any>(null);
+  const [userCourseInput, setUserCourseInput] = useState(null);
 
   return (
     <div>
