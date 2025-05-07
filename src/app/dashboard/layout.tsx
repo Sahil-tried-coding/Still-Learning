@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import Sidebar from './_components/Sidebar'
 
-const DashboardLayout = ({children}:ReactNode) => {
+const DashboardLayout = ({children}) => {
   return (
     <div className='flex'>
         <div>
