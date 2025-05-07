@@ -8,7 +8,6 @@ const Home = () => {
     <div className='overflow-x-hidden'>
       <Header/>
       <Hero/>
-      <SmoothCursor />
     </div>
   )
 }

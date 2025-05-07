@@ -60,7 +60,7 @@ const CourseStart = () => {
     }
 </div>
 <Link href={`/createcourse/${courseId}/finish`}>
-<Button className='bg-green-600 text-xl mt-2 text-white font-semibold w-full h-[60px] '>Share Course</Button>
+<Button className='cursor-pointer bg-green-600 text-xl mt2 text-white font-semibold w-full h-[60px] '>Share Course</Button>
 </Link>
 </div>
 

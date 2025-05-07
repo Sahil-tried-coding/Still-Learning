@@ -83,7 +83,7 @@ const Sidebar = () => {
       </div>
 
       {/* Bottom Progress Section */}
-      <div className="px-6 py-4">
+      {/* <div className="px-6 py-4">
         <p className="text-sm text-gray-600 mb-1">
           <span className="font-medium text-black">2</span> of 5 courses created
         </p>
@@ -93,7 +93,7 @@ const Sidebar = () => {
         <p className="text-xs text-red-500 mt-2">
           Upgrade your plan for unlimited course generation
         </p>
-      </div>
+      </div> */}
     </div>
     }
     </div>

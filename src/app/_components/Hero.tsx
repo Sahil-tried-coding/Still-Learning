@@ -20,9 +20,9 @@ const Hero = () => {
       Still Learning is an AI-driven course generator that creates customized learning paths based on your goals and interests. Whether You are starting fresh or upskilling, it delivers structured, efficient, and goal-focused content in seconds.
       </p>
 
-      <div className="hidden mt-4 md:flex gap-4 sm:mt-6">
+      <div className="hidden justify-center mt-4 md:flex gap-4 sm:mt-6">
         <Link
-          className="inline-block rounded border border-blue-600 bg-blue-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
+          className="inline-block rounded border border-blue-600 bg-blue-600 px-5 py-3 md:px-12 font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
           href={"/dashboard"}
         >
           Get Started 

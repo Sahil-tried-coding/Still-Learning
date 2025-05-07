@@ -474,14 +474,6 @@ const ChapterContent = ({ chapter, content,course }) => {
 
           
         }
-        <div className="flex justify-end items-center gap-2">
-        <Checkbox id="completed" checked={isCompleted}  onCheckedChange={e=>onCompleted(e)}/>
-      <label htmlFor="completed" >
-        {
-          isCompleted ? "Completed ✅":"Mark as Completed"
-        }
-      </label>
-        </div>
       </div>
     </div>
   );

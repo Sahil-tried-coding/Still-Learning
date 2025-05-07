@@ -1,7 +1,6 @@
 import {
   AlertDialog,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -29,21 +28,19 @@ const LoadingDialog = ({ loading }: { loading: boolean }) => {
           </AlertDialogTitle>
         </AlertDialogHeader>
 
-        <AlertDialogDescription>
-  <div className="flex flex-col items-center justify-center gap-4 mt-4">
-    <Image
-      src={coding}
-      alt="Coding Animation"
-      width={100}
-      height={100}
-      className="rounded-lg"
-    />
-    <p className="text-gray-600 text-sm text-center px-2">
-    Hold tight—our AI is busy pretending to be a genius while it cooks your course.
-    </p>
-  </div>
-</AlertDialogDescription>
-
+        {/* Avoid nesting <p> inside <AlertDialogDescription> */}
+        <div className="flex flex-col items-center justify-center gap-4 mt-4">
+          <Image
+            src={coding}
+            alt="Coding Animation"
+            width={100}
+            height={100}
+            className="rounded-lg"
+          />
+          <p className="text-gray-600 text-sm text-center px-2">
+            Hold tight—our AI is busy pretending to be a genius while it cooks your course.
+          </p>
+        </div>
 
         <AlertDialogFooter />
       </AlertDialogContent>
