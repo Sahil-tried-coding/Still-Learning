@@ -5,7 +5,7 @@ import React, { ReactNode, useState } from "react";
 import { IoHomeOutline, IoSearchOutline } from "react-icons/io5";
 import logo from "../../../../public/8d34699f-7474-43c6-a0f0-dfde1ef62907.webp";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-import { AiOutlineDollar } from "react-icons/ai";
+import { MdOutlineCreateNewFolder } from "react-icons/md";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -35,9 +35,9 @@ const Sidebar = () => {
     },
     {
       id: 3,
-      name: "Subscription",
-      path: "/dashboard/subscription",
-      icon: <AiOutlineDollar />,
+      name: "Create Course",
+      path: "/createcourse",
+      icon: <MdOutlineCreateNewFolder /> ,
     },
     {
       id: 4,

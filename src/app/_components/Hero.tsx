@@ -1,6 +1,7 @@
 import React from 'react'
 import svg from "../../../public/MessyDoodle.svg"
 import Link from 'next/link'
+import { TypingAnimation } from '@/components/magicui/typing-animation'
 const Hero = () => {
   return (
     <section className="w-screen overflow-x-hidden h-max md:h-max flex flex-col items-center justify-center  bg-white lg:grid  lg:place-content-center">
@@ -10,7 +11,8 @@ const Hero = () => {
     <div className="max-w-prose md:text-left text-center">
       <h1 className="text-4xl text-center font-bold text-gray-900 sm:text-5xl">
         Still Learning
-        <div className="text-blue-500 md:whitespace-nowrap mt-3 mr-2"> Ai Powered Course Generator </div>
+        <TypingAnimation className="text-blue-500 md:whitespace-nowrap mt-3 mr-2"> Ai Powered Course Generator </TypingAnimation>
+        {/* <TypingAnimation>Typing Animation</TypingAnimation> */}
         {/* conversions */}
       </h1>
 
