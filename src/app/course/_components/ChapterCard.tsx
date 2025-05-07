@@ -16,7 +16,7 @@ const ChapterCard = ({chapter,index}) => {
         </div>
         <div className='w-full cursor-pointer'>
             <h1 className='text-md cursor-pointer font-semibold'>{chapter?.ChapterName}</h1>
-            <h1 className='flex gap-2 cursor-pointer text-sm items-center mt-1'> <Image src={'/clock.png'} width={20} height={15} alt='clock' /> {chapter?.Duration}</h1>
+            {/* <h1 className='flex gap-2 cursor-pointer text-sm items-center mt-1'> <Image src={'/clock.png'} width={20} height={15} alt='clock' /> {chapter?.Duration}</h1> */}
         </div>
     </div>
     </div>

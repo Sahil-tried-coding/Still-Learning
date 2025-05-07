@@ -22,5 +22,4 @@ export const ChapterList = pgTable("ChapterList",{
     courseId:varchar("courseId").notNull(),
     content:json('content').notNull(),
     chapterId:integer('chapterId').notNull(),
-    isCompleted:boolean('isCompleted').default(false)
 })
