@@ -1,20 +1,16 @@
+"use client"
 import { Checkbox } from "@/components/ui/checkbox";
-import React from "react";
-import YouTube from "react-youtube";
+import React, { useState } from "react";
 
-const opts = {
-  height: "390",
-  width: "740",
-  playerVars: {
-    autoplay: 0,
-  },
-};
 
 const ChapterContent = ({ chapter, content,course }) => {
 
 
+  const [isCompleted, setIsCompleted] = useState(false)
+
   const onCompleted = async(e)=>{
-    console.log(e)
+    setIsCompleted(e)
+    console.log("this is completed",isCompleted)
   }
 
 
@@ -478,11 +474,15 @@ const ChapterContent = ({ chapter, content,course }) => {
 
           
         }
-      </div>
-      <label className="flex justify-end items-center gap-2">
-        <Checkbox onClick={e=>onCompleted(e)}/>
-        Mark as Completed 
+        <div className="flex justify-end items-center gap-2">
+        <Checkbox id="completed" checked={isCompleted}  onCheckedChange={e=>onCompleted(e)}/>
+      <label htmlFor="completed" >
+        {
+          isCompleted ? "Completed ✅":"Mark as Completed"
+        }
       </label>
+        </div>
+      </div>
     </div>
   );
 };
