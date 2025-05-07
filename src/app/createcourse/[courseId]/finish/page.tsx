@@ -103,7 +103,7 @@ const Finish = () => {
 
 
     <h1 className="font-semibold my-2.5 text-xl text-blue-600 tracking-wide ">
-      Course URL:
+      Course URL :
     </h1>
 
       <h1 className='text-xs border max-w-max p-2 text-center text-gray-400 flex items-center gap-3'>{process.env.NEXT_PUBLIC_HOST_NAME}course/view/{course?.courseId}
