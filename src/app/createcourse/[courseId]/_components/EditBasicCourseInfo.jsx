@@ -21,8 +21,8 @@ import { eq } from 'drizzle-orm'
 const  EditBasicCourseInfo = ({course}) => {
 
 
-  const [courseName, setCourseName] = useState<string>()
-  const [description, setDescription] = useState<string>()
+  const [courseName, setCourseName] = useState('')
+  const [description, setDescription] = useState('')
 const [loading, setloading] = useState(false)
 
   useEffect(()=>{

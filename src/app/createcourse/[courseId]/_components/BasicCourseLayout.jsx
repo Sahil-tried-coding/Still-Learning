@@ -16,7 +16,7 @@ import placeholder from "../../../../../public/placeholder.png"
 import Link from "next/link";
 
 const BasicCourseLayout = ({ course }) => {
-  const [firebaseImage, setFirebaseImage] = useState<string>(course?.courseImage );
+  const [firebaseImage, setFirebaseImage] = useState(course?.courseImage );
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
