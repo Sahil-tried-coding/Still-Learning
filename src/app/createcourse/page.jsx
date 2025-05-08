@@ -20,7 +20,7 @@ import { useRouter } from "next/navigation";
 
 const Createcourse = () => {
   const { userCourseInput, setUserCourseInput } = useContext(Userinput);
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const [loading, setLoading] = useState(false);
 
