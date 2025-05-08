@@ -15,7 +15,7 @@ const Category = () => {
 
 
 
-  const handleCategory = (category:string) =>{
+  const handleCategory = (category) =>{
 
     setUserCourseInput(prev  =>({
       ...prev,

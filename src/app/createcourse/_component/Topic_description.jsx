@@ -11,7 +11,7 @@ const Topic_description = () => {
   
 
 
-    const handleTopicInput = (fieldName:string,value:string) =>{
+    const handleTopicInput = (fieldName,value) =>{
 
       setUserCourseInput(prev=>({
         ...prev,

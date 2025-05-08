@@ -13,33 +13,6 @@ import { Button } from "@/components/ui/button";
 import LoadingDailog from "../_component/LoadingDailog";
 import getYoutubeVideo from "@/config/Service";
 
-type courseType = {
-  id: number;
-  name: string;
-  courseId: string;
-  courseOutput: {
-    CourseName: string;
-    Duration: string;
-    Description: string;
-    Level: string;
-    Category: string;
-    NoOfChapters: number;
-    Topic: string;
-    Chapters: [
-      {
-        ChapterName: string;
-        Duration: string;
-        About: string;
-      }
-    ];
-  };
-  courseImage: string;
-  includeVideo: string;
-  userImage: string;
-  userName: string;
-  category: string;
-  createdBy: string;
-};
 
 const CourseLayout = () => {
   const [loading, setLoading] = useState(false);
@@ -76,7 +49,7 @@ const CourseLayout = () => {
   const { user } = useUser();
 
 
-  const { courseId } = useParams() as { courseId: string };
+  const { courseId } = useParams() ;
 
   useEffect(() => {
     getCourse();

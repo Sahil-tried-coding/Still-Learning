@@ -1,6 +1,6 @@
 // app/api/generate/route.ts
 
-export async function POST(req: Request) {
+export async function POST(req) {
     const api_key = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
     const { prompt } = await req.json();
      

@@ -9,7 +9,7 @@ const ChapterContent = ({ chapter, content,course }) => {
 
 
 
-  function safeJsonContent(input: string | object) {
+  function safeJsonContent(input) {
     if (typeof input !== "string") return input;
   
     try {
@@ -23,10 +23,10 @@ const ChapterContent = ({ chapter, content,course }) => {
   }
   
 
-  let parsedContent = safeJsonContent(content.content) ;
+  let parsedContent = safeJsonContent(content?.content) ;
 
   try {
-    parsedContent = typeof(content.content) == "string" ? JSON.parse(content.content) : content.content
+    parsedContent = typeof(content?.content) == "string" ? JSON.parse(content?.content) : content.content
   } catch (error) {
     console.log(error)
   }
@@ -56,15 +56,6 @@ const ChapterContent = ({ chapter, content,course }) => {
       </p>
 
       {content?.videoId && course?.includeVideo == "Yes" && (
-  //       <YouTube
-  //       // height: "390",
-  // // width: "1140",
-  //         // className="md:h-[390px] md:w-[1140px] h-[300px] w-[450px]"
-  //         className="md:px-48"
-  //         videoId={content.videoId}
-  //         opts={opts}
-          
-  //       />
   <iframe
   width="1140"
   height="415"

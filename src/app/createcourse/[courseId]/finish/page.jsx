@@ -8,33 +8,7 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import BasicCourseLayout from '../_components/BasicCourseLayout';
 import Image from 'next/image';
-type courseType = {
-  id: number;
-  name: string;
-  courseId: string;
-  courseOutput: {
-    CourseName: string;
-    Duration: string;
-    Description: string;
-    Level: string;
-    Category: string;
-    NoOfChapters: number;
-    Topic: string;
-    Chapters: [
-      {
-        ChapterName: string;
-        Duration: string;
-        About: string;
-      }
-    ];
-  };
-  courseImage: string;
-  includeVideo: string;
-  userImage: string;
-  userName: string;
-  category: string;
-  createdBy: string;
-};
+
 const Finish = () => {
     const [course, setCourse] = useState<courseType>({
       name: "",
@@ -68,7 +42,7 @@ const Finish = () => {
     const { user } = useUser();
   
   
-    const { courseId } = useParams() as { courseId: string };
+    const { courseId } = useParams() 
   
     useEffect(() => {
       getCourse();

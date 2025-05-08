@@ -9,18 +9,12 @@ import { MdOutlineCreateNewFolder } from "react-icons/md";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type HomeItem = {
-  id: number;
-  name: string;
-  path: string;
-  icon: ReactNode;
-};
 
 const Sidebar = () => {
 
   const [openSidebar, setOpenSidebar] = useState(true)
 
-  const menuItems: HomeItem[] = [
+  const menuItems = [
     {
       id: 1,
       name: "Home",

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Shimmer = () => {
-    const course:number[] = [1,2,3,4,5,6,7,8,9];
+    const course = [1,2,3,4,5,6,7,8,9];
   return (
     <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-5 mt-5'>
         {

@@ -13,7 +13,7 @@ const Options = () => {
 
   const {userCourseInput, setUserCourseInput} = useContext(Userinput)
 
-  const handleOptionsInput = (fieldName:string,value:string) =>{
+  const handleOptionsInput = (fieldName,value) =>{
 
     setUserCourseInput(prev=>({
       ...prev,

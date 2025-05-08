@@ -8,36 +8,10 @@ import React, { useEffect, useState } from "react";
 import CourseCard from "./CourseCard";
 import Shimmer from "./Shimmer";
 
-type Chapter = {
-  ChapterName: string;
-  Duration: string;
-  About: string;
-};
 
-type CourseType = {
-  id: number;
-  name: string;
-  courseId: string;
-  courseOutput: {
-    CourseName: string;
-    Duration: string;
-    Description: string;
-    Level: string;
-    Category: string;
-    NoOfChapters: number;
-    Topic: string;
-    Chapters: Chapter[];
-  };
-  courseImage: string;
-  includeVideo: string;
-  userImage: string;
-  userName: string;
-  category: string;
-  createdBy: string;
-};
 
 const UserCourseList = () => {
-  const [allCourse, setAllCourse] = useState<CourseType[]>([]);
+  const [allCourse, setAllCourse] = useState([]);
   const { user } = useUser();
 
 
@@ -55,7 +29,7 @@ const UserCourseList = () => {
         .where(eq(CourseList.createdBy, user?.primaryEmailAddress?.emailAddress ?? ""));
 
       if (result.length > 0) {
-        setAllCourse(result as CourseType[]);
+        setAllCourse(result );
       }
     } catch (error) {
       console.error("Failed to fetch courses:", error);

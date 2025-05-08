@@ -304,7 +304,7 @@
 
 // src/config/Aimodel.tsx
 
-export const generateCourseContent = async (prompt: string) => {
+export const generateCourseContent = async (prompt ) => {
 
   const api_key = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
   try {

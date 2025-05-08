@@ -13,7 +13,7 @@ import React, { useEffect, useState } from 'react'
 const CourseView = () => {
 
     const [course, setCourse] = useState({})
-      const { courseId } = useParams() as { courseId: string };
+      const { courseId } = useParams() 
     
 
       useEffect(() => {

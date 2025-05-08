@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import coding from "../../../../public/coding.gif";
 
-const LoadingDialog = ({ loading }: { loading: boolean }) => {
+const LoadingDialog = ({ loading }) => {
   return (
     <AlertDialog open={loading}>
       <AlertDialogContent className="bg-white border-none shadow-xl rounded-xl max-w-md mx-auto">

@@ -21,7 +21,7 @@ const BasicCourseLayout = ({ course }) => {
 
   const router = useRouter();
 
-  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = async (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
@@ -47,7 +47,7 @@ const BasicCourseLayout = ({ course }) => {
     }
   };
 
-  const saveImageToDb = async (url: string) => {
+  const saveImageToDb = async (url) => {
     const result = await db.update(CourseList)
       .set({ courseImage: url })
       .where(eq(CourseList.id, course.id));

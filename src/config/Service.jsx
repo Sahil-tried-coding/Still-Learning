@@ -19,7 +19,7 @@
 
 
 
-const getYoutubeVideo = async (query: string) => {
+const getYoutubeVideo = async (query) => {
   const res = await fetch('/api/youtube', {
     method: 'POST',
     headers: {

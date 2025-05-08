@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export async function POST(req: Request) {
+export async function POST(req) {
   const { query } = await req.json()
 
   const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
