@@ -30,9 +30,9 @@ const Category = () => {
         '>
             {SelecteCategory.map((item,index)=>(
                 <div key={index}>
-                    <div onClick={()=>handleCategory(item.name)} className={`md:w-[250px] w-[300px]  cursor-pointer hove:border   flex flex-col items-center py-3 ${userCourseInput?.category === item.name && "border-blue-700 border-2 bg-blue-100"}`}>
+                    <div onClick={()=>handleCategory(item.name)} className={`md:w-[250px] w-[300px]  cursor-pointer hove:border   flex flex-col items-center py-1.5 md:py-3 ${userCourseInput?.category === item.name && "border-blue-700 border-2 bg-blue-100"}`}>
 
-                    <Image className='w-[120px]  h-[120px] p-2'  alt='a' src={item.icon}/>
+                    <Image className='w-[80px] md:w-[120px]  md:h-[120px] p-2'  alt='a' src={item.icon}/>
                     <h1 className='font-semibold'>{item.name}</h1>
                     </div>
                 </div>

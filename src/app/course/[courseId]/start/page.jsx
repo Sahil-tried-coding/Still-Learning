@@ -77,7 +77,7 @@ const CourseStart = () => {
               ))}
             </div>
             <Link href={`/createcourse/${courseId}/finish`}>
-              <Button className="cursor-pointer bg-green-600 text-xl mt2 text-white font-semibold w-full h-[60px] ">
+              <Button className="cursor-pointer bg-green-600 md:text-xl mt2 text-white font-semibold w-full md:h-[60px] ">
                 Share Course
               </Button>
             </Link>
@@ -90,7 +90,7 @@ const CourseStart = () => {
                 <Image src={"/8d34699f-7474-43c6-a0f0-dfde1ef62907.webp"} alt='logo' height={100} width={100} />
                 <h1>Still Learning</h1>
                 </div> */}
-              <h1 className="text-4xl text-black border-blue-600 capitalize border-4 p-8 items-center justify-center font-semibold text-center">
+              <h1 className="md:text-4xl text-black border-blue-600 capitalize border-4 p-8 items-center justify-center font-semibold text-center">
                 Pick a chapter and dive in! 🎯📘
               </h1>
 

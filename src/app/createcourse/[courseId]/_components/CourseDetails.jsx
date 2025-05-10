@@ -3,7 +3,7 @@ import React from "react";
 
 const CourseDetails = ({ course }) => {
   return (
-    <div className="shadow-lg w-full border p-6 mt-4.5 lg:mx-48">
+    <div className="shadow-lg md:w-full border md:p-6 mt-4.5 p-3 overflow-x-hidden mx-3 lg:mx-48">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
       <div className="flex items-center gap-3">
           <div className="text-3xl">

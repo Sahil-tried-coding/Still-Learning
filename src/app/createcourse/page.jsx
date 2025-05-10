@@ -139,15 +139,15 @@ NoOfChapters:${userCourseInput.chapters}, in strictly JSON format`;
   };
 
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <div className="flex items-center justify-center ">
-        <div className="mt-3 md:mt-0 text-3xl font-semibold text-blue-500">
+        <div className="mt-4 md:mt-0 text-3xl font-semibold text-blue-500">
           Create Course
         </div>
       </div>
 
       {/* stepper */}
-      <div className=" flex mt-6 md:mt-10 items-center justify-center ">
+      <div className="  mx-auto flex mt-6 md:mt-10 items-center justify-center ">
         {StepperOptions.map((item, index) => (
           <div className=" flex items-center gap-5" key={index}>
             <div className="flex ml-2 flex-col items-center">
@@ -163,7 +163,7 @@ NoOfChapters:${userCourseInput.chapters}, in strictly JSON format`;
             </div>
             {index !== StepperOptions.length - 1 && (
               <div
-                className={`h-1 w-[100px] rounded-full ${
+                className={`h-1 w-[80px] md:w-[100px] rounded-full ${
                   activeIndex - 1 >= index ? "bg-blue-500" : "bg-gray-400"
                 }`}
               ></div>

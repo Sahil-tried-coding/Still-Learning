@@ -22,7 +22,7 @@ const ChapterDetails = ({course}) => {
 
                         <div className='flex flex-col gap-2'>
             
-            <div className='font-semibold ml-1.5'>{item.ChapterName} </div>
+            <div className='font-semibold md:ml-1.5 '>{item.ChapterName} </div>
                             <div className='text-gray-400  text-xs flex-wrap w-[85%]'>{item.About}</div>
                             <div className='flex items-center mb-2 gap-1.5'>
                                 <Image alt='clock' width={25} height={25} src={"/clock.png"}/>

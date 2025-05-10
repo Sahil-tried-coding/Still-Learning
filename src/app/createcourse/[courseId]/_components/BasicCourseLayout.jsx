@@ -66,10 +66,10 @@ const BasicCourseLayout = ({ course }) => {
   // parsedCourse = course.courseOutput ? JSON.parse(course?.courseOutput) : {}
 
   return (
-    <div className="flex flex-col h-[]4">
+    <div className="flex flex-col ">
       
 
-      <div className="px-6 py-8 border shadow-lg rounded-xl bg-white lg:w-full">
+      <div className="md:px-6 md:mx-0 mx-2 px-2 py-8 border shadow-lg rounded-xl bg-white lg:w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
           <div className="flex flex-col justify-center">
@@ -97,7 +97,7 @@ const BasicCourseLayout = ({ course }) => {
           </div>
 
           <div className="flex justify-center items-center">
-            <label htmlFor="upload-image">
+            <label htmlFor="upload-image" className="text-center">
               <Image
                 className="rounded-2xl object-contain h-[250px]  p-2"
                 alt="Course Image"
@@ -110,7 +110,7 @@ const BasicCourseLayout = ({ course }) => {
                 id="upload-image"
                 className="opacity-0"
                 type="file"
-              />
+              /> {loading ? <div>Upload The Banner/Image</div>:<div></div>}
             </label>
           </div>
 

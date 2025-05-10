@@ -13,7 +13,7 @@ const AddCourse = () => {
       <div>
         <h1 className="text-2xl font-medium text-gray-800">
           Hello,{" "}
-          <span className="font-semibold text-blue-600">
+          <span className="font-semibold text-blue-600 whitespace-nowrap">
             {user?.fullName || "Instructor"}
           </span>
         </h1>
@@ -23,7 +23,7 @@ const AddCourse = () => {
       </div>
 
       <Link href="/createcourse" passHref>
-        <Button className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-md transition-all duration-200">
+        <Button className= "cursor-pointer mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-md transition-all duration-200">
           + Create Course with AI
         </Button>
       </Link>

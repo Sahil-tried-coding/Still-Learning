@@ -10,32 +10,32 @@ import BasicCourseLayout from '../_components/BasicCourseLayout';
 import Image from 'next/image';
 
 const Finish = () => {
-    const [course, setCourse] = useState<courseType>({
-      name: "",
-      id: 0,
-      createdBy: "",
-      courseId: "",
-      courseOutput: {
-        CourseName: "",
-        Category: "",
-        Topic: "",
-        Duration: "",
-        Description: "",
-        Level: "",
-        NoOfChapters: 0,
-        Chapters: [
-          {
-            ChapterName: "",
-            Duration: "",
-            About: "",
-          },
-        ],
-      },
-      courseImage: "",
-      includeVideo: "Yes",
-      userImage: "",
-      userName: "",
-      category: "",
+    const [course, setCourse] = useState({
+      // name: "",
+      // id: 0,
+      // createdBy: "",
+      // courseId: "",
+      // courseOutput: {
+      //   CourseName: "",
+      //   Category: "",
+      //   Topic: "",
+      //   Duration: "",
+      //   Description: "",
+      //   Level: "",
+      //   NoOfChapters: 0,
+      //   Chapters: [
+      //     {
+      //       ChapterName: "",
+      //       Duration: "",
+      //       About: "",
+      //     },
+      //   ],
+      // },
+      // courseImage: "",
+      // includeVideo: "Yes",
+      // userImage: "",
+      // userName: "",
+      // category: "",
     });
   
   

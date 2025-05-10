@@ -16,32 +16,32 @@ import getYoutubeVideo from "@/config/Service";
 
 const CourseLayout = () => {
   const [loading, setLoading] = useState(false);
-  const [course, setCourse] = useState<courseType>({
-    name: "",
-    id: 0,
-    createdBy: "",
-    courseId: "",
-    courseOutput: {
-      CourseName: "",
-      Category: "",
-      Topic: "",
-      Duration: "",
-      Description: "",
-      Level: "",
-      NoOfChapters: 0,
-      Chapters: [
-        {
-          ChapterName: "",
-          Duration: "",
-          About: "",
-        },
-      ],
-    },
-    courseImage: "",
-    includeVideo: "Yes",
-    userImage: "",
-    userName: "",
-    category: "",
+  const [course, setCourse] = useState({
+    // name: "",
+    // id: 0,
+    // createdBy: "",
+    // courseId: "",
+    // courseOutput: {
+    //   CourseName: "",
+    //   Category: "",
+    //   Topic: "",
+    //   Duration: "",
+    //   Description: "",
+    //   Level: "",
+    //   NoOfChapters: 0,
+    //   Chapters: [
+    //     {
+    //       ChapterName: "",
+    //       Duration: "",
+    //       About: "",
+    //     },
+    //   ],
+    // },
+    // courseImage: "",
+    // includeVideo: "Yes",
+    // userImage: "",
+    // userName: "",
+    // category: "",
   });
 
   const router = useRouter();

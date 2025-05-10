@@ -27,7 +27,7 @@ const Options = () => {
 
   return (
     <div className= "mx-6 md:mt-0 md:mb-0 mb-8 mt-12 md:mx-12 lg:mx-44">
-      <div className=" grid grid-cols-2 lg:mx-44 mt-8 gap-8 items-center justify-evenly">
+      <div className=" flex flex-col md:grid grid-cols-2 lg:mx-44 mt-8 gap-8 items-center justify-evenly">
         <div>
                 <label >Difficulty Level</label>
           <Select value={userCourseInput?.level} onValueChange={(value)=>handleOptionsInput('level',value)}>
