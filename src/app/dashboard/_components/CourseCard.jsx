@@ -54,12 +54,13 @@ const CourseCard = ({item,refreshData}) => {
     }
   return (
     <div
-    onClick={()=>router.replace(`course/${item.courseId}`)}
+    
       key={item.courseId}
       className="shadow-md rounded-xl overflow-hidden p-4 bg-white hover:shadow-lg transition-all duration-200 hove
     r:scale-[1.2] cursor-pointer  ease-in  "
     >
       <Image
+      onClick={()=>router.replace(`course/${item.courseId}`)}
         className="mx-auto rounded-md object-cover w-full h-[150px] "
         src={item.courseImage || "/video-content-op.png"}
         alt="Course"
