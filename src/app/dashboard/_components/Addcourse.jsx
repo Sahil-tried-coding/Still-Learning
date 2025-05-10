@@ -11,7 +11,7 @@ const AddCourse = () => {
   return (
     <section className=" flex flex-col md:flex-row items-start md:items-center justify-between px-20 md:px-12 lg:px-20 py-6 bg-white rounded-xl shadow-sm">
       <div>
-        <h1 className="text-2xl font-medium text-gray-800">
+        <h1 className="text-2xl font-medium text-gray-800 whitespace-nowrap">
           Hello,{" "}
           <span className="font-semibold text-blue-600 whitespace-nowrap">
             {user?.fullName || "Instructor"}
