@@ -77,7 +77,8 @@ const Finish = () => {
       Course URL :
     </h1>
 
-      <h1 className='text-xs mb-3 border max-w-max p-2 text-center text-gray-400 flex items-center gap-3 '>{process.env.NEXT_PUBLIC_HOST_NAME}course/view/{course?.courseId}
+      <h1 className='text-xs mb-3 border max-w-max p-2 text-center text-gray-400 flex items-center gap-3 '>still-learning-sb4e.vercel.app/course/view/{course?.courseId}
+      {/* <h1 className='text-xs mb-3 border max-w-max p-2 text-center text-gray-400 flex items-center gap-3 '>{process.env.NEXT_PUBLIC_HOST_NAME}course/view/{course?.courseId} */}
 
         <Image onClick={async()=>await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_HOST_NAME+"course/view/"+course?.courseId)} className='cursor-pointer' src={"/copy.png"} width={25} height={25 }  alt='copy'/>
       </h1>
